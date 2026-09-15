@@ -5,17 +5,58 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Crimson Strider</title>
 <link rel="icon" href="/images/syntax-badge.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/ui/construction.css">
 <link rel="stylesheet" href="/ui/experience-shell.css">
 <script defer src="/ui/experience-shell.js"></script>
 </head>
-<body>
-<header class="labs-bar">
+<body class="is-loading">
+<div class="hero-loader" role="status" aria-live="polite" aria-busy="true">
+<div class="loader-content">
+        <div class="loader-mark" aria-hidden="true">
+          <img class="loader-still" src="/ui/construction-logo.png" alt="" width="844" height="906">
+          <div class="loader-animation construction" aria-hidden="true"><div class="construction-scene">
+<div class="construction-part construction-part-0"><div class="construction-rail construction-rail-0">
+<i class="construction-face construction-face-0-0"></i>
+<i class="construction-face construction-face-0-1"></i>
+<i class="construction-face construction-face-0-2"></i>
+</div></div>
+<div class="construction-part construction-part-1"><div class="construction-rail construction-rail-1">
+<i class="construction-face construction-face-1-0"></i>
+<i class="construction-face construction-face-1-1"></i>
+<i class="construction-face construction-face-1-2"></i>
+</div></div>
+<div class="construction-part construction-part-2"><div class="construction-rail construction-rail-2">
+<i class="construction-face construction-face-2-0"></i>
+<i class="construction-face construction-face-2-1"></i>
+<i class="construction-face construction-face-2-2"></i>
+</div></div>
+<div class="construction-part construction-part-3"><div class="construction-rail construction-rail-3">
+<i class="construction-face construction-face-3-0"></i>
+<i class="construction-face construction-face-3-1"></i>
+<i class="construction-face construction-face-3-2"></i>
+</div></div>
+<div class="construction-part construction-part-4"><div class="construction-rail construction-rail-4">
+<i class="construction-face construction-face-4-0"></i>
+<i class="construction-face construction-face-4-1"></i>
+<i class="construction-face construction-face-4-2"></i>
+</div></div>
+<div class="construction-part construction-part-5"><div class="construction-rail construction-rail-5">
+<i class="construction-face construction-face-5-0"></i>
+<i class="construction-face construction-face-5-1"></i>
+<i class="construction-face construction-face-5-2"></i>
+</div></div>
+</div></div>
+        </div>
+<p class="loader-status">Starting the experience</p>
+<div class="loader-actions" hidden><button class="loader-retry" type="button">Try again</button><a href="/#work" target="_top">Back to Labs</a></div>
+</div></div>
+<header class="labs-bar" inert aria-hidden="true">
 <a class="labs-back" href="/#work" target="_top" aria-label="Back to Syntax Labs">
 <span class="labs-brand" aria-hidden="true"><span>SNTX</span><img src="/images/syntax-badge.svg" alt="" width="22" height="24"><span>LABS</span></span>
 <span class="labs-return" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 12H5m6-6-6 6 6 6"/></svg><span>BACK</span></span>
 </a>
 </header>
-<iframe class="experience-frame" title="Crimson Strider interactive experience" allow="autoplay; fullscreen; clipboard-write; gamepad" allowfullscreen></iframe>
-<noscript>Enable JavaScript to open this experience. <a href="/#work" target="_top">Back to Labs</a>.</noscript>
+<iframe class="experience-frame" inert aria-hidden="true" title="Crimson Strider interactive experience" allow="autoplay; fullscreen; clipboard-write; gamepad" allowfullscreen></iframe>
+<noscript><style>.hero-loader{display:none}noscript{position:fixed;inset:0;z-index:10;background:#000}</style>Enable JavaScript to open this experience. <a href="/#work" target="_top">Back to Labs</a>.</noscript>
 </body>
 </html>
