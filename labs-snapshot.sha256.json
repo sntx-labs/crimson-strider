@@ -1,0 +1,23 @@
+{
+  "public/experiments/crimson-strider/assets/cables.json": "19b05c0b158d384328e36666ebbcba5e301fff5566c0a8f27ddeaf286a5e1fde",
+  "public/experiments/crimson-strider/assets/crimson_strider_web_v008.glb": "4027a992c0c35ec24a97b24b59a56fbb59b7ada2e6f4c04a97700ada5fe6cf07",
+  "public/experiments/crimson-strider/assets/rig-manifest.json": "95e67c3030ea0ce0dc954eec355d152af6f73f48e884f04e36cf56313e89d38a",
+  "public/experiments/crimson-strider/experience.html": "03d59f32acb8ec9be1782b852eb57d30c4be5a4803da25cc3f1e6f806d7232da",
+  "public/experiments/crimson-strider/index.html": "0301892d94fb4f52f193159bef40ff6b9fa6e8b2bf4ac2b39a6758abe6619540",
+  "public/experiments/crimson-strider/kinematics.js": "ce50815481ade882bf61bf771c0a0a9c6a9af85bc68756ae3e3c6d8df146125b",
+  "public/experiments/crimson-strider/main.js": "000de113dbd0073abec1da348a96ae73c0dfc6a84969dcd67f9ad9b012d75688",
+  "public/experiments/crimson-strider/motion.js": "c8a7dce2253797ed842dc6526d502f69caef5e1e2fa2d7b30d00dbef356879ee",
+  "public/experiments/crimson-strider/sh-panel.css": "7596d1dfeaec9ad16241a1bc582d28b2856f0cc98eba9d4cce674393e9abd53e",
+  "public/experiments/crimson-strider/sh-panel.js": "6fdffb0f2bf1fdaea55e9b8650d459ddf206d79c4032d07bc313ed81baa6d3c3",
+  "public/experiments/crimson-strider/stance.js": "44844001cd2ea75ceaf84deb65c1f159586522519c6c42fd3c4cf7fca5418d44",
+  "public/experiments/crimson-strider/steel.js": "0963e95fe6b6c7f690bf01afbcd6eab097b7a1b93e2d0befe5c5e3c3a1da0136",
+  "public/experiments/crimson-strider/style.css": "01cd6071ea0b0f0efacc0d4d066b8a4e1c7507d777a24f26c074e01a22e9830a",
+  "public/experiments/crimson-strider/vendor/LICENSE": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454",
+  "public/experiments/crimson-strider/vendor/lights/RectAreaLightTexturesLib.js": "438c9aa76f101f1f515e09ce674fb062a3ea04d33fc2d0320b0b9755fd17f5d2",
+  "public/experiments/crimson-strider/vendor/lights/RectAreaLightUniformsLib.js": "b35b74887bd558a05cd39be33e278a37852187591161f10ad5d96c9c2893343c",
+  "public/experiments/crimson-strider/vendor/loaders/GLTFLoader.js": "89c18243091559a7c18e4f009612792ce603aa76338cc20587d83135fcdfc1a9",
+  "public/experiments/crimson-strider/vendor/objects/Reflector.js": "012ecf98f5fc9bd262871e33d79392a25c04c2573ed68852eb3b8d2d39f9808b",
+  "public/experiments/crimson-strider/vendor/three.core.js": "c269806166c61cc3ddf6f19b05fc31a50f6bdfc85902eaed723e972f9bb3e163",
+  "public/experiments/crimson-strider/vendor/three.module.js": "2ac776db82c8cb8075433c63085028142f3e86e20016a0308b28943e8dbea238",
+  "public/experiments/crimson-strider/vendor/utils/BufferGeometryUtils.js": "1b9e1a6732b23adf87aea2cc430f6bc7eab7deacc7c195c2f51f53e06f4293e6"
+}

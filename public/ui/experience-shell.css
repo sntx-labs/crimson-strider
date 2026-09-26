@@ -1,0 +1,51 @@
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#000}
+body{display:grid;grid-template-rows:52px minmax(0,1fr);height:100svh;color:#fff;font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
+.labs-bar{position:relative;z-index:1;min-width:0;background:#000}
+.labs-back{display:grid;place-items:center;width:100%;height:100%;color:#fff;text-decoration:none;font-size:14px;line-height:1;letter-spacing:.1em}
+.labs-brand,.labs-return{grid-area:1/1;display:flex;align-items:center;justify-content:center;gap:15px;transition:opacity .22s ease,transform .22s ease}
+.labs-brand img{display:block;width:22px;height:24px;object-fit:contain}
+.labs-return{opacity:0;transform:translateY(6px);gap:10px}
+.labs-return svg{width:20px;height:20px}
+.labs-back:hover .labs-brand,.labs-back:focus-visible .labs-brand{opacity:0;transform:translateY(-6px)}
+.labs-back:hover .labs-return,.labs-back:focus-visible .labs-return{opacity:1;transform:translateY(0)}
+.labs-back:focus-visible{outline:1px solid #fff;outline-offset:-5px}
+.experience-frame{display:block;width:100%;height:100%;min-width:0;min-height:0;border:0;background:#000}
+noscript{padding:24px;font-size:16px}
+noscript a{color:#fff}
+@media(prefers-reduced-motion:reduce){.labs-brand,.labs-return{transition:none;transform:none!important}}
+
+.is-loading .experience-frame{opacity:0;pointer-events:none}
+.is-loading .labs-bar{visibility:hidden}
+.hero-loader{position:fixed;inset:0;z-index:10;display:grid;place-items:center;background:#000;isolation:isolate}
+.hero-loader[hidden]{display:none}
+.loader-content{display:flex;flex-direction:column;align-items:center;gap:30px;padding:24px;width:100%;max-width:600px}
+.loader-mark{position:relative;width:clamp(120px,12vw,168px);aspect-ratio:844/906;flex-shrink:0}
+.loader-mark img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;visibility:hidden}
+.hero-loader.is-playing .loader-animation{visibility:visible}
+.hero-loader.is-fallback .loader-still{visibility:visible}
+.loader-status{margin:0;min-height:2.8em;text-align:center;color:#cfcec7;font:14px/1.4 ui-monospace,SFMono-Regular,Consolas,monospace;max-width:100%;overflow-wrap:anywhere}
+.loader-actions{display:flex;gap:24px;align-items:center;justify-content:center;flex-wrap:wrap}
+.loader-actions[hidden]{display:none}
+.loader-actions button,.loader-actions a{font:14px/1.4 ui-monospace,monospace;color:#fff;background:transparent;border:1px solid #666;padding:10px 14px;text-decoration:none;cursor:pointer}
+@media(prefers-reduced-motion:reduce){.hero-loader .loader-animation{display:none}.hero-loader .loader-still{visibility:visible}}
+
+.labs-controls-toggle{position:absolute;right:18px;top:0;height:52px;width:44px;display:grid;place-items:center;border:0;padding:0;background:transparent;color:#aaa;cursor:pointer}.labs-controls-toggle:hover,.labs-controls-toggle:focus-visible{color:white}.labs-controls-toggle:focus-visible{outline:1px solid white;outline-offset:-5px}
+
+body.capture-mode:not(.is-loading) .labs-bar{display:none}body.capture-mode .experience-frame{top:0;height:100dvh}
+
+/* Touch users need a visible exit without relying on hover. */
+@media(max-width:680px),(hover:none){
+ .labs-back{width:max-content;min-width:112px;padding:0 16px;justify-items:start}
+ .labs-brand{display:none}
+ .labs-return{opacity:1;transform:none;transition:none}
+ .labs-back:hover .labs-return,.labs-back:focus-visible .labs-return{transform:none}
+ .labs-controls-toggle{right:8px}
+}
+
+.mobile-performance-notice{width:min(340px,calc(100% - 40px));margin:auto;padding:20px;border:1px solid #30302d;border-radius:24px;background:#0b0b0a;color:#cfcec7;box-shadow:0 24px 80px #0009;font:14px/1.6 ui-monospace,SFMono-Regular,Consolas,monospace;text-align:left}
+.mobile-performance-notice::backdrop{background:rgba(0,0,0,.86)}
+.mobile-performance-icon{display:flex;color:#cfcec7}
+.mobile-performance-notice p{margin:12px 0 20px}
+.mobile-performance-notice button{width:100%;min-height:44px;padding:10px 16px;border:0;border-radius:6px;background:#cfcec7;color:#0b0b0a;font:inherit;cursor:pointer}
+.mobile-performance-notice button:focus-visible{outline:2px solid white;outline-offset:4px}

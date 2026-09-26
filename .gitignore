@@ -1,0 +1,11 @@
+
+# Local dependencies, builds and credentials
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+authoring/**/public/
+public/experiments/lilac-frontier/source/lilac-frontier/public/

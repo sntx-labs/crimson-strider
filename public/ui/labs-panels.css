@@ -1,0 +1,38 @@
+/* Layout and accessibility around the unmodified Screenhouse component. */
+.sh-panel-hint{display:none!important}
+.sh-ctrl[hidden],.sh-folder[hidden]{display:none!important}
+.sh-panel .sh-folder-head:focus-visible,.sh-panel button:focus-visible,.sh-panel input:focus-visible,.sh-panel select:focus-visible{outline:1px solid white;outline-offset:3px}
+.sh-panel[data-labs-ready]{position:relative;top:auto;right:auto;flex:0 0 320px;width:320px;max-width:none;min-width:0;height:100%;transition:none;transform:none}
+.sh-panel[data-labs-ready].collapsed{width:0;flex-basis:0;min-width:0;overflow:hidden;border:0;pointer-events:none}
+#ink-shell{display:flex;width:100%;height:100%}
+#ink-stage{position:relative;flex:1;min-width:0;min-height:0;overflow:hidden}
+#ink-stage canvas{width:100%;height:100%}
+body.engine-lab-page{height:100dvh;min-height:0;overflow:hidden}
+body.engine-lab-page #app-container.engine-lab-shell{height:100%;min-height:0;display:flex;flex-direction:row}
+body.engine-lab-page #panel-container.sh-panel{padding:0;min-width:0;width:320px;background:var(--sh-bg)}
+body.engine-lab-page #panel-container.sh-panel.collapsed{width:0}
+body.engine-lab-page .engine-lab-stage{min-height:0;height:100%;overflow:auto}
+#engine-lab-toast{position:static;inset:auto;transform:none;max-width:100%;white-space:normal}
+body:has(>#control-panel){display:flex;flex-direction:row;height:100dvh}
+body:has(>#control-panel)>.canvas-container{position:relative;inset:auto;flex:1;min-width:0;min-height:0;height:100%;order:0;transition:none}
+body:has(>#control-panel)>#control-panel{order:1}
+@media(max-width:680px){
+ #ink-shell,.experience,body:has(>#control-panel){flex-direction:column}
+ .sh-panel[data-labs-ready]{flex:0 0 42%;width:100%;height:42%;max-height:42%;border-left:0;border-top:1px solid var(--sh-border)}
+ .sh-panel[data-labs-ready].collapsed{flex-basis:0;height:0;max-height:0;width:100%;border:0}
+ #app:has(>#controls.sh-panel){display:flex;flex-direction:column}
+ #app>#stage{flex:1;min-height:0;height:auto}
+ .scene-shell{display:flex;flex-direction:column}
+ body.engine-lab-page #app-container.engine-lab-shell{flex-direction:column}
+ body.engine-lab-page #panel-container.sh-panel{width:100%;height:42%}
+ body.engine-lab-page #panel-container.sh-panel.collapsed{width:100%;height:0}
+ body.engine-lab-page .engine-lab-stage{flex:1;height:0}
+}
+
+.capture-mode .controls-rail{display:none}.capture-mode #app-shell{grid-template-rows:minmax(0,1fr)}
+
+#control-panel.sh-panel:not(.collapsed)~.canvas-container{right:auto}
+
+body.engine-lab-page .engine-lab-stage{display:flex;flex-direction:column;justify-content:center;align-items:stretch;gap:32px}body.engine-lab-page .engine-lab-stage>.engine-lab-controls{display:none}body.engine-lab-page .engine-lab-scope-shell{width:100%;min-height:180px;flex:1;max-height:420px}body.engine-lab-page .engine-lab-loop-groups{display:flex;gap:20px}.sh-panel .engine-lab-title{font-size:18px}.sh-panel .engine-lab-hint-row{display:block;white-space:normal;line-height:1.8}.sh-panel .engine-lab-hint-row span{display:block}.sh-panel .sh-btn span{display:block;font-size:9px;opacity:.55;line-height:1.5}
+
+body.engine-lab-page .engine-lab-stage{justify-content:flex-start;overflow:hidden;padding:24px;gap:0}body.engine-lab-page .engine-lab-scope-shell{height:100%;max-height:none;min-height:0;flex:1}body.engine-lab-page #engine-lab-scope{width:100%;height:100%;min-height:0}.sh-panel .engine-lab-readouts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin:0 0 10px}.sh-panel .engine-lab-readout{padding:10px 5px;min-width:0}.sh-panel .engine-lab-readout strong{font-size:18px}.sh-panel .engine-lab-label{font-size:8px;letter-spacing:1px}.sh-panel .engine-lab-loop-groups{display:block}.sh-panel .engine-lab-loop-card{padding:6px;margin-bottom:6px}.sh-panel .engine-lab-readout-compact{font-size:10px}.sh-panel.collapsed{border:0!important}

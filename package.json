@@ -1,0 +1,15 @@
+{
+  "name": "crimson-strider",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "labs:dev": "node scripts/labs-serve.mjs",
+    "labs:build": "node scripts/labs-build.mjs",
+    "labs:verify": "node scripts/labs-verify.mjs",
+    "start": "node scripts/labs-serve.mjs",
+    "build": "node scripts/labs-build.mjs",
+    "test": "node scripts/labs-verify.mjs",
+    "labs:authoring": "node scripts/labs-authoring.mjs"
+  }
+}

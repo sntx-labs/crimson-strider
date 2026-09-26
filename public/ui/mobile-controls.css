@@ -1,0 +1,16 @@
+.labs-touch-controls[hidden]{display:none}
+.labs-touch-controls{flex:none;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px max(12px,env(safe-area-inset-right)) max(8px,env(safe-area-inset-bottom)) max(12px,env(safe-area-inset-left));background:#101010;border-top:1px solid #292929;color:#c8c8c8;font:10px/1.2 ui-monospace,monospace;letter-spacing:.06em;text-transform:uppercase;user-select:none;-webkit-user-select:none;touch-action:none}
+body.labs-touch-layout{display:flex;flex-direction:column}
+body.labs-touch-layout>main{flex:1;min-height:0;height:auto!important}
+.labs-touch-pad-group{display:flex;flex-direction:column;align-items:center;gap:5px}
+.labs-touch-pad{position:relative;width:90px;height:76px;display:grid;place-items:center;border:1px solid #424242;border-radius:24px;background:radial-gradient(circle,#232323,#171717);touch-action:none}
+.labs-touch-pad::before,.labs-touch-pad::after{content:'';position:absolute;background:#444;pointer-events:none}
+.labs-touch-pad::before{width:1px;height:44px}.labs-touch-pad::after{height:1px;width:54px}
+.labs-touch-knob{z-index:1;width:28px;height:28px;border-radius:50%;background:#bbb;border:1px solid #ddd;pointer-events:none}
+.labs-touch-actions{display:grid;grid-template-columns:repeat(2,minmax(44px,1fr));gap:6px;max-width:240px;flex:1}
+.labs-touch-actions button{min-height:44px;padding:8px;border:1px solid #444;border-radius:8px;background:#1c1c1c;color:inherit;font:inherit;text-transform:inherit;touch-action:none}
+.labs-touch-actions button:only-child{grid-column:1/-1}
+.labs-touch-controls .held{border-color:#aaa;background-color:#353535}.labs-touch-controls button:focus-visible{outline:2px solid #ddd;outline-offset:2px}
+@media(orientation:landscape) and (max-height:520px){.labs-touch-pad{height:56px;width:80px}.labs-touch-pad-group{flex-direction:row}.labs-touch-actions{display:flex;max-width:none;flex:0}.labs-touch-actions button{min-width:52px}.labs-touch-controls{padding-top:5px;padding-bottom:max(5px,env(safe-area-inset-bottom));gap:8px}}
+
+.labs-touch-pad-group:nth-child(2){order:3}

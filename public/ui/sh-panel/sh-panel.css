@@ -1,0 +1,361 @@
+/* ── SHPanel — Screenhouse control panel ─────────────────── */
+
+:root {
+  --sh-bg: rgba(8, 8, 8, 0.94);
+  --sh-border: rgba(255, 255, 255, 0.06);
+  --sh-text: rgba(255, 255, 255, 0.88);
+  --sh-text-dim: rgba(255, 255, 255, 0.38);
+  --sh-text-mid: rgba(255, 255, 255, 0.55);
+  --sh-surface: rgba(255, 255, 255, 0.06);
+  --sh-surface-hover: rgba(255, 255, 255, 0.1);
+  --sh-accent: rgba(255, 255, 255, 0.7);
+  --sh-radius: 4px;
+  --sh-width: 320px;
+  --sh-font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* ── Panel drawer ──────────────────────────────────────── */
+
+.sh-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: var(--sh-width);
+  max-width: 50vw;
+  height: 100%;
+  box-sizing: border-box;
+  background: var(--sh-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-left: 1px solid var(--sh-border);
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  z-index: 100;
+  transition: width 280ms cubic-bezier(.4,0,.2,1),
+              opacity 200ms ease,
+              min-width 280ms cubic-bezier(.4,0,.2,1);
+  font-family: var(--sh-font);
+  color: var(--sh-text);
+  font-size: 12px;
+  line-height: 1.4;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.sh-panel input:not([type="range"]):not([type="color"]):not([type="checkbox"]):not([type="radio"]),
+.sh-panel textarea,
+.sh-panel [contenteditable="true"] {
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+.sh-panel.collapsed {
+  width: 0;
+  min-width: 0;
+  opacity: 0;
+  pointer-events: none;
+  overflow: hidden;
+  border-left-width: 0;
+}
+
+.sh-panel-body {
+  padding: 16px 14px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* ── Hint pill ─────────────────────────────────────────── */
+
+.sh-panel-hint {
+  position: fixed;
+  right: 14px;
+  bottom: 14px;
+  padding: 5px 10px;
+  font-family: var(--sh-font);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--sh-text-dim);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--sh-border);
+  border-radius: 999px;
+  pointer-events: none;
+  z-index: 101;
+  transition: opacity 600ms ease;
+}
+.sh-panel-hint.hidden { opacity: 0; }
+
+/* ── Folders ───────────────────────────────────────────── */
+
+.sh-folder {
+  margin-bottom: 2px;
+}
+
+.sh-folder-head {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 2px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  color: var(--sh-text-mid);
+  transition: color 150ms ease;
+}
+
+.sh-folder-head:hover { color: var(--sh-text); }
+
+.sh-arrow {
+  font-size: 10px;
+  transition: transform 200ms ease;
+  display: inline-block;
+}
+
+.sh-folder.collapsed .sh-arrow { transform: rotate(-90deg); }
+
+.sh-folder-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-left: 4px;
+  overflow: hidden;
+  max-height: 4000px;
+  transition: max-height 300ms ease, opacity 200ms ease;
+}
+
+.sh-folder.collapsed > .sh-folder-body {
+  max-height: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ── Shared control row ────────────────────────────────── */
+
+.sh-ctrl {
+  padding: 6px 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sh-ctrl-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.sh-label {
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  color: var(--sh-text-dim);
+}
+
+.sh-value {
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  color: var(--sh-text-mid);
+  min-width: 36px;
+  text-align: right;
+}
+
+/* ── Slider ────────────────────────────────────────────── */
+
+.sh-slider input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 3px;
+  background: var(--sh-surface);
+  border-radius: 2px;
+  cursor: pointer;
+  outline: none;
+}
+
+.sh-slider input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(255,255,255,0.25);
+  cursor: pointer;
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.sh-slider input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.25);
+  box-shadow: 0 0 10px rgba(255,255,255,0.4);
+}
+
+.sh-slider input[type="range"]::-moz-range-thumb {
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(255,255,255,0.25);
+  cursor: pointer;
+}
+
+.sh-slider input[type="range"]::-moz-range-track {
+  height: 3px;
+  background: var(--sh-surface);
+  border-radius: 2px;
+}
+
+/* ── Color swatch ──────────────────────────────────────── */
+
+.sh-color {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sh-color input[type="color"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 36px;
+  height: 20px;
+  padding: 0;
+  border: 1px solid var(--sh-border);
+  border-radius: var(--sh-radius);
+  background: transparent;
+  cursor: pointer;
+}
+
+.sh-color input[type="color"]::-webkit-color-swatch-wrapper { padding: 1px; }
+.sh-color input[type="color"]::-webkit-color-swatch { border: none; border-radius: 2px; }
+
+/* ── Toggle switch ─────────────────────────────────────── */
+
+.sh-toggle {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sh-switch {
+  position: relative;
+  display: inline-block;
+  width: 32px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.sh-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.sh-knob {
+  position: absolute;
+  inset: 0;
+  background: var(--sh-surface);
+  border-radius: 999px;
+  transition: background 200ms ease;
+}
+
+.sh-knob::after {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  width: 12px;
+  height: 12px;
+  background: rgba(255,255,255,0.35);
+  border-radius: 50%;
+  transition: transform 200ms ease, background 200ms ease;
+}
+
+.sh-switch input:checked + .sh-knob {
+  background: rgba(255,255,255,0.15);
+}
+
+.sh-switch input:checked + .sh-knob::after {
+  transform: translateX(16px);
+  background: #fff;
+}
+
+/* ── Button ────────────────────────────────────────────── */
+
+.sh-btn {
+  display: block;
+  width: 100%;
+  padding: 7px 12px;
+  margin: 2px 0;
+  font-family: var(--sh-font);
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.6px;
+  color: var(--sh-text);
+  background: var(--sh-surface);
+  border: 1px solid var(--sh-border);
+  border-radius: var(--sh-radius);
+  cursor: pointer;
+  transition: background 150ms ease, border-color 150ms ease;
+}
+
+.sh-btn:hover {
+  background: var(--sh-surface-hover);
+  border-color: rgba(255,255,255,0.12);
+}
+
+.sh-btn:active {
+  background: rgba(255,255,255,0.14);
+}
+
+/* ── Select ────────────────────────────────────────────── */
+
+.sh-select {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sh-select select {
+  padding: 4px 8px;
+  font-family: var(--sh-font);
+  font-size: 11px;
+  color: var(--sh-text);
+  background: var(--sh-surface);
+  border: 1px solid var(--sh-border);
+  border-radius: var(--sh-radius);
+  outline: none;
+  cursor: pointer;
+  min-width: 90px;
+  transition: border-color 150ms ease;
+}
+
+.sh-select select:hover { border-color: rgba(255,255,255,0.15); }
+
+.sh-select select option {
+  background: #111;
+  color: var(--sh-text);
+}
+
+/* ── File ──────────────────────────────────────────────── */
+
+.sh-file { padding: 4px; }
+
+/* ── Scrollbar ─────────────────────────────────────────── */
+
+.sh-panel::-webkit-scrollbar { width: 5px; }
+.sh-panel::-webkit-scrollbar-track { background: transparent; }
+.sh-panel::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.1);
+  border-radius: 3px;
+}
+.sh-panel::-webkit-scrollbar-thumb:hover {
+  background: rgba(255,255,255,0.2);
+}
