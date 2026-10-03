@@ -1,13 +1,32 @@
-/* Project information around the canonical Screenhouse panel. */
-.sh-panel .labs-project-card{padding:14px;margin:0 0 18px;border:1px solid var(--sh-border,#303030);background:rgba(255,255,255,.025);text-align:left;white-space:normal}
-.sh-panel .labs-project-title{margin:0;font:500 16px/1.3 var(--sh-font,sans-serif);letter-spacing:-.3px;color:var(--sh-text,#ddd);text-transform:none}
-.sh-panel .labs-project-description{margin:9px 0 0;font-size:12px;line-height:1.6;letter-spacing:0;color:var(--sh-text-mid,#aaa)}
-.sh-panel .labs-project-source{display:inline-block;margin-top:12px;font-size:11px;line-height:1.5;color:var(--sh-text,#ddd);text-decoration:underline;text-underline-offset:3px}
-.sh-panel .labs-project-source:hover{color:#fff}
-.sh-panel .labs-project-source:focus-visible{outline:1px solid currentColor;outline-offset:4px}
-.sh-panel .labs-project-hint{margin:14px 0 0;padding-top:11px;border-top:1px solid var(--sh-border,#303030);font-size:10px;line-height:1.6;color:var(--sh-text-dim,#888);letter-spacing:0}
-.sh-panel .labs-project-hint kbd{font:inherit;color:var(--sh-text,#ddd)}
+/* Approved D Source Rows card. Scene controls and panel layout stay unchanged. */
+.sh-panel .source-rows-card{--card-line:rgba(255,255,255,.095);margin:0 0 18px;padding:0;border:1px solid var(--card-line);border-radius:4px;background:rgba(255,255,255,.012);text-align:left;white-space:normal;-webkit-user-select:text;user-select:text;overflow:hidden;color:var(--sh-text)}
+.sh-panel .source-intro{padding:14px 14px 16px}
+.sh-panel .source-intro h1{margin:0;font:500 17px/1.35 var(--sh-font);letter-spacing:-.3px;text-transform:none;color:rgba(255,255,255,.9);overflow-wrap:anywhere}
+.sh-panel .source-description{margin:9px 0 0;font:400 12px/1.7 var(--sh-font);letter-spacing:0;color:rgba(255,255,255,.62)}
+.sh-panel .source-actions{border-top:1px solid var(--card-line)}
+.sh-panel .source-row{display:flex;align-items:center;gap:9px;width:100%;min-height:40px;box-sizing:border-box;padding:10px 14px;margin:0;border:0;border-radius:0;background:none;color:rgba(255,255,255,.8);font:500 11px/1.45 var(--sh-font);letter-spacing:0;text-transform:none;text-align:left;text-decoration:none;cursor:pointer;transition:background 120ms,color 120ms}
+.sh-panel .source-row+.source-row{border-top:1px solid var(--card-line)}
+.sh-panel .source-row svg{width:14px;height:14px;flex:0 0 14px;color:rgba(255,255,255,.56)}
+.sh-panel .source-action-label{flex:0 0 auto}
+.sh-panel .source-action-detail{margin-left:auto;font-size:10px;font-weight:400;color:rgba(255,255,255,.49);text-align:right;max-width:110px;line-height:1.5;white-space:normal}
+.sh-panel .source-row:not(:disabled):hover{background:rgba(255,255,255,.055);color:#fff}
+.sh-panel .source-row:focus-visible{outline:1px solid rgba(255,255,255,.85);outline-offset:-4px;background:rgba(255,255,255,.05)}
+.sh-panel .source-row:disabled{color:rgba(255,255,255,.42);cursor:default}
+.sh-panel .source-row:disabled svg{color:rgba(255,255,255,.32)}
+.sh-panel .source-row:disabled .source-action-detail{color:rgba(255,255,255,.42)}
+.sh-panel .source-row[aria-busy=true]{cursor:wait}
+.sh-panel .source-footer{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;padding:11px 14px 12px;border-top:1px solid var(--card-line);font:10px/1.5 var(--sh-font);color:rgba(255,255,255,.47)}
+.sh-panel .source-meta{display:flex;align-items:center;gap:6px;font-size:9px;white-space:nowrap}
+.sh-panel .source-meta>span{color:rgba(255,255,255,.25)}
+.sh-panel .source-shortcut{display:flex;align-items:center;gap:5px;white-space:nowrap;font-size:9px}
+.sh-panel .source-shortcut kbd{display:inline-flex;align-items:center;justify-content:center;width:17px;height:16px;border:1px solid #ffffff19;border-radius:3px;background:#ffffff03;color:#a4a4a4;font:11px/1 ui-monospace,monospace}
+.sh-panel .prompt-copy-fallback{padding:12px 14px 14px;border-top:1px solid var(--card-line);font:10px/1.6 var(--sh-font);color:#aaa}
+.sh-panel .prompt-copy-fallback[hidden]{display:none}
+.sh-panel .prompt-copy-fallback label{display:block;margin:0 0 7px}
+.sh-panel .prompt-copy-fallback textarea{display:block;width:100%;max-width:100%;min-height:130px;box-sizing:border-box;resize:vertical;padding:9px;border:1px solid #ffffff25;border-radius:3px;background:#080808;color:#bbb;font:10px/1.6 ui-monospace,monospace;white-space:pre-wrap;overflow-wrap:anywhere;-webkit-user-select:text;user-select:text}
+.sh-panel .prompt-copy-fallback textarea:focus-visible{outline:1px solid #ddd;outline-offset:2px}
 .sh-panel[data-project-card] .entry-heading,.sh-panel[data-project-card] .panel-title,.sh-panel[data-project-card] .panel-subtitle,.sh-panel[data-project-card]>.panel-intro,.sh-panel[data-project-card] .panel-source{display:none}
 .sh-panel[data-project-card] .panel-heading{display:none}
-
 .sh-panel [data-labs-advanced][hidden]{display:none!important}
+@media(prefers-reduced-motion:reduce){.sh-panel .source-row{transition:none}}
+@media(pointer:coarse){.sh-panel .source-row{min-height:44px}}

@@ -247,75 +247,192 @@
   const projects={
   "lilac-frontier": {
     "title": "Tal Cera: Surface Operations",
-    "description": "A quiet observation bay overlooking an alien frontier."
+    "description": "A quiet observation bay overlooking an alien frontier.",
+    "technology": "Three.js",
+    "setup": "This Labs scene uses a Vite-built Three.js observation bay with walking and view modes, exposure controls, and streamed geometry. Preserve the walking controls, camera framing, geometry loading, and mobile joystick. The provided source README describes a Node.js 24 build with npm ci and npm run build; confirm these against an owner-provided checkout before running them.",
+    "license": "Preserve the existing third-party notices, including the Blender-derived noise shader GPL-2.0-or-later notice. Do not apply one blanket license to the project or its geometry.",
+    "licenseLabel": "Source not linked"
   },
   "vesper-drift": {
     "title": "Avocet 2-6",
-    "description": "Pilot a spacecraft through an endless asteroid belt."
+    "description": "Pilot a spacecraft through an endless asteroid belt.",
+    "technology": "Three.js",
+    "setup": "This Labs scene uses JavaScript ES modules and Three.js for spacecraft flight, asteroid fields, mouse modes, and cruise assist. Preserve flight-controls.js behavior, camera orbit, return-home controls, keyboard flight, and touch input. Inspect an owner-provided checkout for its actual entry point and run instructions; do not invent npm scripts.",
+    "license": "No project-wide source license is established by this Labs page. Read the actual LICENSE, dependency notices, and asset terms in the owner-provided project. Do not infer permission to reuse or redistribute from the fact that the demo is public.",
+    "licenseLabel": "Source not linked"
   },
   "2000-bugs": {
     "title": "2000 Mechanical Bugs",
-    "description": "A swarm of black steel machines that follows your pointer and scatters in shockwaves."
+    "description": "A swarm of black steel machines that follows your pointer and scatters in shockwaves.",
+    "technology": "Three.js",
+    "setup": "This Labs scene uses local Three.js ES modules with main.js, bug.js, simulation.js, and steel.js. Preserve pointer pursuit, touch drag, shockwaves, scatter, pause, machine count, rendering, and reset. For an authorized complete static checkout, serve its root over HTTP with its vendor dependencies present; confirm its own instructions first.",
+    "license": "No project-wide source license is established by this Labs page. Read the actual LICENSE, dependency notices, and asset terms in the owner-provided project. Do not infer permission to reuse or redistribute from the fact that the demo is public.",
+    "licenseLabel": "Source not linked"
   },
   "portfolio-particle-spheres": {
     "title": "Particle Spheres",
-    "description": "An interactive study of spherical forms built from moving particles."
+    "description": "An interactive study of spherical forms built from moving particles.",
+    "technology": "Three.js",
+    "setup": "This Labs scene is a bundled Three.js particle-sphere study. Preserve sphere count, rotation speed, resting and active colors, pointer interaction, resize handling, and reset. Obtain the editable project before choosing install or build commands; the deployed bundle is not a substitute for a source checkout.",
+    "license": "No project-wide source license is established by this Labs page. Read the actual LICENSE, dependency notices, and asset terms in the owner-provided project. Do not infer permission to reuse or redistribute from the fact that the demo is public.",
+    "licenseLabel": "Source not linked"
   },
   "engine-lab": {
     "title": "Engine Lab",
     "description": "Shape engine sounds for games with synthesis and layered audio loops.",
-    "github": "https://github.com/taylorallenux/engine-lab"
+    "github": "https://github.com/sntx-labs/engine-lab",
+    "download": "https://github.com/sntx-labs/engine-lab/archive/refs/heads/main.zip",
+    "technology": "Web Audio",
+    "setup": "The sntx-labs repository contains the current Labs snapshot alongside the original standalone project. Read LABS.md first: Node.js 20 or newer, npm run labs:dev to run the Labs adaptation, npm run labs:verify to validate its files, and npm run labs:build to assemble a deployable snapshot. This is a browser-based Web Audio engine-sound lab with synthesis, layered loops, a scope, keyboard and pointer acceleration, braking, and boost. Preserve audio activation by user gesture, sample loading, volume, pitch, brightness, and reset. The current upstream README documents npm install, npm run dev, and Vite's local URL with engine-lab.html; npm run build creates the production build. Confirm the current README and package scripts before running commands, and test audio after a user gesture. The Labs snapshot has localized audio and dependencies and an adapted SHPanel, so upstream may differ.",
+    "license": "The existing Engine Lab source is CC BY 4.0. Preserve appropriate credit, a link to the license, and an indication of changes. Check sample and dependency licenses separately; do not replace existing license terms.",
+    "licenseLabel": "CC BY 4.0"
   },
   "2026-07-14-viscous-ink": {
-    "title": "Viscous Ink",
-    "description": "Paint with flowing pigment, textured paper, and fluid motion."
+    "title": "Liquid Painting",
+    "description": "Paint with flowing pigment, textured paper, and fluid motion.",
+    "technology": "Three.js",
+    "setup": "This Labs scene is a Three.js/WebGL fluid painting study with shader-based advection, paper texture, two ink colors, brush size, and stroke force. Preserve pointer and touch painting, the clear action, reset, simulation behavior, and resize. For an authorized complete static checkout, inspect its ES module imports and serve the root over HTTP; do not assume a package build exists.",
+    "license": "No project-wide source license is established by this Labs page. Read the actual LICENSE, dependency notices, and asset terms in the owner-provided project. Do not infer permission to reuse or redistribute from the fact that the demo is public.",
+    "licenseLabel": "Source not linked"
   },
   "asterion-cockpit": {
     "title": "ASTERION / Cockpit",
-    "description": "Explore the controls, lighting, and atmosphere of a spacecraft cockpit."
+    "description": "Explore the controls, lighting, and atmosphere of a spacecraft cockpit.",
+    "technology": "Three.js",
+    "setup": "This Labs scene is a bundled spacecraft cockpit with an arrival sequence, autopilot, thrust, cabin lights, exposure, and reset. Preserve the arrival replay, camera, lighting, control bindings, and streamed large assets. Obtain editable source and the matching asset set before selecting the build workflow.",
+    "license": "Check the licenses and provenance of the cockpit models, textures, and other assets separately before reuse or redistribution. Do not infer asset rights from the rendering library license.",
+    "licenseLabel": "Source not linked"
   },
   "twigl-plume-sphere": {
     "title": "Star Simulator",
-    "description": "Explore six animated star compositions, from flowing currents to a turbulent chromosphere."
+    "description": "Explore six animated star compositions, from flowing currents to a turbulent chromosphere.",
+    "technology": "WebGL",
+    "setup": "This Labs scene is a bundled shader-based star simulator with six authored presets: Azure Plume, Chromosphere Surge, Ember Veins, Ember Current, Abyssal Current, and White Coral Labyrinth. Preserve all six presets, animation, rendering, and responsive canvas behavior. Inspect the owner-provided editable source and its package scripts before choosing a build workflow.",
+    "license": "Preserve the existing shader credits and third-party notices, including applicable Yohei Nishitsuji MIT attribution. Do not replace or remove upstream attribution or assume one license covers every asset.",
+    "licenseLabel": "Source not linked"
   },
   "particle-landscape": {
     "title": "Particle Landscape",
     "description": "Explore a terrain made from particles, with soft edges and pointer interaction.",
-    "github": "https://github.com/taylorallenux/study-particle-landscape"
+    "github": "https://github.com/sntx-labs/particle-landscape",
+    "download": "https://github.com/sntx-labs/particle-landscape/archive/refs/heads/main.zip",
+    "technology": "Three.js",
+    "setup": "The sntx-labs repository contains the current Labs snapshot alongside the original standalone project. Read LABS.md first: Node.js 20 or newer, npm run labs:dev to run the Labs adaptation, npm run labs:verify to validate its files, and npm run labs:build to assemble a deployable snapshot. The upstream README describes a static Three.js/WebGL 2 study with ES modules/CDN imports, no build step, index.html, and assets/heightmap_512x512.png. Read the current README and imports first. For local testing, use a static HTTP server from the repository root; if Python 3 is already available, python3 -m http.server 8000 is suitable. Open http://localhost:8000 in a WebGL 2 browser. Preserve heightmap loading, tiling, pointer hover, fog, animation, camera behavior, and reset. Labs was imported from upstream commit a940f8a3bb9495a36e6296c16707375f26892648 and adapted to SHPanel with a docked panel, artwork-first launch, Explore/Advanced groups, settings export/reset, and oval framing. The upstream README describes Tweakpane: do not claim the upstream repository exactly reproduces the Labs adaptation.",
+    "license": "The upstream Particle Landscape source is MIT-licensed. Preserve its copyright and permission notice in copies or substantial portions. Check dependency and asset licenses separately; do not replace the upstream MIT license.",
+    "licenseLabel": "MIT source"
   },
   "topo-contour-terrain": {
     "title": "Topo Contour Terrain",
-    "description": "Shape a procedural landscape drawn in topographic contour lines."
+    "description": "Shape a procedural landscape drawn in topographic contour lines.",
+    "technology": "Three.js",
+    "setup": "This Labs scene uses Three.js, shader contour lines, heightmap displacement, bloom, orbit controls, and color/elevation settings. Its included README describes serving the folder with a static HTTP server, and uses heightmap_512x512.png. Preserve contour rendering, camera drag/zoom, scroll speed, reset, and all shader controls. Confirm the actual entry point, imports, and run instructions in the owner-provided source first.",
+    "license": "No project-wide source license is established by this Labs page. Read the actual LICENSE, dependency notices, and asset terms in the owner-provided project. Do not infer permission to reuse or redistribute from the fact that the demo is public.",
+    "licenseLabel": "Source not linked"
   },
   "pc-greebles-editor": {
     "title": "PC: Greebles Editor",
-    "description": "Build intricate mechanical surfaces from procedural geometric details."
+    "description": "Build intricate mechanical surfaces from procedural geometric details.",
+    "technology": "Three.js",
+    "setup": "This Labs scene is a bundled procedural mechanical-surface editor with color presets, density, speed, and reset. Preserve the live geometry controls, camera, materials, and reset behavior. Obtain the editable source and inspect its current scripts before choosing an install or build workflow.",
+    "license": "Read the license and any grants accompanying the provided editor source, models, and assets. Preserve applicable third-party notices and existing grants; do not assume a public demo grants reuse rights.",
+    "licenseLabel": "Source not linked"
   },
   "crimson-strider": {
     "title": "Crimson Strider",
-    "description": "A mechanical walker study in motion, materials, and articulated limbs."
+    "description": "A mechanical walker study in motion, materials, and articulated limbs.",
+    "technology": "Three.js",
+    "setup": "This Labs scene uses local Three.js ES modules with main.js, kinematics.js, motion.js, stance.js, and steel.js. Preserve articulated stepping, follow-pointer behavior, pace, stage color, camera reset, and full reset. For an authorized complete static checkout, inspect its module imports and serve its root over HTTP with vendor dependencies present.",
+    "license": "No project-wide source license is established by this Labs page. Read the actual LICENSE, dependency notices, and asset terms in the owner-provided project. Do not infer permission to reuse or redistribute from the fact that the demo is public.",
+    "licenseLabel": "Source not linked"
   },
   "morrow-hauler": {
     "title": "Morrow Hauler",
-    "description": "Drive a lunar rover across an illustrated, procedural landscape."
+    "description": "Drive a lunar rover across an illustrated, procedural landscape.",
+    "technology": "Three.js",
+    "setup": "This Labs scene uses Three.js ES modules for a lunar rover, terrain, illustration, engraving, and tires. Preserve WASD/arrow driving, Space braking, R reset, C camera switching, camera modes, top speed, ground color, pause, and touch behavior. For an authorized complete static checkout, inspect its imports and serve its root over HTTP with its dependencies present.",
+    "license": "No project-wide source license is established by this Labs page. Read the actual LICENSE, dependency notices, and asset terms in the owner-provided project. Do not infer permission to reuse or redistribute from the fact that the demo is public.",
+    "licenseLabel": "Source not linked"
   }
 };
-  const project=projects[location.pathname.split('/')[2]];
+  const projectSlug=location.pathname.split('/')[2];
+  const project=projects[projectSlug];
+  const sourceIcons={
+    github:'<path d="M9 19c-4 1-4-2-6-2m12 4v-4a3.5 3.5 0 0 0-1-3c3-.4 6-1.5 6-6a4.7 4.7 0 0 0-1.3-3.3 4.3 4.3 0 0 0-.1-3.3S17.4 1 15 2.6a11 11 0 0 0-6 0C6.6 1 5.4 1.4 5.4 1.4a4.3 4.3 0 0 0-.1 3.3A4.7 4.7 0 0 0 4 8c0 4.5 3 5.6 6 6a3.5 3.5 0 0 0-1 3v4"/>',
+    download:'<path d="M12 3v12m-4-4 4 4 4-4M4 16v5h16v-5"/>',
+    copy:'<rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/>'
+  };
+  function sourceElement(tag,className,text){
+    const element=document.createElement(tag);element.className=className;
+    if(text!==undefined)element.textContent=text;
+    return element;
+  }
+  function sourceRow(label,detail,icon,url){
+    const row=sourceElement(url?'a':'button','source-row');
+    if(url){row.href=url;row.target='_blank';row.rel='noopener noreferrer';row.setAttribute('aria-label',project.title+' '+label+' (opens in a new tab)');}
+    else row.type='button';
+    const graphic=document.createElementNS('http://www.w3.org/2000/svg','svg');
+    graphic.setAttribute('viewBox','0 0 24 24');graphic.setAttribute('fill','none');graphic.setAttribute('stroke','currentColor');graphic.setAttribute('stroke-width','1.5');graphic.setAttribute('aria-hidden','true');graphic.innerHTML=sourceIcons[icon];
+    row.append(graphic,sourceElement('span','source-action-label',label),sourceElement('span','source-action-detail',detail));
+    return row;
+  }
+  function agentPrompt(){
+    const source=project.github
+      ?'Source repository:\n'+project.github+'\n\nRead the current README, LICENSE, source, and any agent instructions. Confirm the default branch and current commit. Clone into a new working directory, or use my existing checkout if I provide one. Do not overwrite existing local changes.'
+      :'Source availability:\nA public source repository and downloadable source release are not linked from this Labs page. Ask me for an authorized repository, archive, or existing checkout before implementation. Do not invent a GitHub destination, clone command, or source license.';
+    return 'Help me explore and adapt '+project.title+' for my project.\n\n'+
+      'My goal: [describe the change, product, or experiment I want to make].\n\n'+
+      project.description+'\n\nLive Labs reference:\nhttps://labs.sntx.co/experiments/'+projectSlug+'/\n\n'+source+'\n\n'+
+      'Project and setup context:\n'+project.setup+'\n\n'+
+      'Labs integration:\nThe live demo uses SHPanel controls and a Labs navigation shell. Treat it as a deployed snapshot; an upstream repository may differ. If I need the exact Labs adaptation, ask for the relevant Labs source before changing the architecture. Preserve existing controls, rendering, reset/export, keyboard and touch interactions, and mobile layout. Inspect the actual project before installing dependencies; never invent package scripts.\n\n'+
+      'Implementation and verification:\nKeep the requested change focused. Test the scene, controls, repeated actions, panel open/close, resize behavior, and browser console. Report what actually ran and any blocked checks. Explain the changed files, run instructions, and remaining decisions. Do not deploy or publish without my request.\n\n'+
+      'License and attribution:\n'+project.license+'\n\n'+
+      'Optional next steps for me, not automatic agent actions:\n'+
+      (project.github?'- I can star '+project.github+' to find it again. Do not star it on my behalf.\n':'')+
+      '- I can choose to sign up for occasional experiment emails at https://labs.sntx.co/. Do not submit an email address or subscribe me automatically.\n'+
+      '- For custom implementation help, I can use the Book a Call link at https://www.sntx.co/. Do not send a message or book a call on my behalf.\n';
+  }
   function projectCard(panel){
     const body=panel.querySelector('.sh-panel-body');
     if(!project||!body||panel.dataset.projectCard)return;
-    const card=document.createElement('section');card.className='labs-project-card';
-    card.setAttribute('aria-label','About this project');
-    const title=document.createElement('h1');title.className='labs-project-title';title.textContent=project.title;
-    const description=document.createElement('p');description.className='labs-project-description';description.textContent=project.description;
-    card.append(title,description);
-    if(project.github){
-      const link=document.createElement('a');link.className='labs-project-source';link.href=project.github;
-      link.target='_blank';link.rel='noopener noreferrer';link.textContent='View on GitHub ↗';
-      link.setAttribute('aria-label',project.title+' on GitHub (opens in a new tab)');card.append(link);
-    }
-    const hint=document.createElement('p');hint.className='labs-project-hint';
-    const key=document.createElement('kbd');key.textContent='~';hint.append('Press ',key,' to toggle panel.');card.append(hint);
+    const card=sourceElement('section','labs-project-card source-rows-card');
+    card.setAttribute('aria-label','About '+project.title);
+    const intro=sourceElement('div','source-intro');
+    intro.append(sourceElement('h1','labs-project-title',project.title),sourceElement('p','source-description',project.description));
+    const actions=sourceElement('div','source-actions');actions.setAttribute('aria-label','Project source');
+    const github=sourceRow('GitHub',project.github?'View source':'Not available','github',project.github);
+    github.disabled=!project.github;
+    const download=sourceRow('Download',project.download?'Repository ZIP':'Not available','download',project.download);
+    download.disabled=!project.download;
+    const copyButton=sourceRow('Copy prompt','','copy');
+    const status=copyButton.querySelector('.source-action-detail');status.setAttribute('role','status');status.setAttribute('aria-live','polite');status.setAttribute('aria-atomic','true');
+    actions.append(github,download,copyButton);
+    const fallback=sourceElement('div','prompt-copy-fallback');fallback.hidden=true;
+    const label=sourceElement('label','','Select and copy this prompt');
+    const field=sourceElement('textarea','');field.id='labs-prompt-'+projectSlug;field.rows=8;field.readOnly=true;field.setAttribute('aria-label',project.title+' agent prompt');label.htmlFor=field.id;
+    fallback.append(label,field);
+    const footer=sourceElement('div','source-footer');
+    const meta=sourceElement('span','source-meta',project.technology);
+    const separator=sourceElement('span','','·');separator.setAttribute('aria-hidden','true');meta.append(separator,document.createTextNode(project.licenseLabel));
+    const shortcut=sourceElement('span','source-shortcut');shortcut.append(sourceElement('kbd','','~'),sourceElement('span','','Toggle panel'));footer.append(meta,shortcut);
+    card.append(intro,actions,fallback,footer);
+    let copying=false,noticeTimer;
+    copyButton.addEventListener('click',async()=>{
+      if(copying)return;
+      copying=true;copyButton.disabled=true;copyButton.setAttribute('aria-busy','true');
+      clearTimeout(noticeTimer);status.textContent='';fallback.hidden=true;
+      const text=agentPrompt();let copied=false;
+      try{
+        try{await navigator.clipboard.writeText(text);copied=true;}catch{}
+        if(!copied){
+          const temporary=document.createElement('textarea');temporary.value=text;temporary.setAttribute('aria-label','Agent prompt');temporary.style.cssText='position:fixed;left:-9999px;top:0';document.body.append(temporary);temporary.select();
+          try{copied=document.execCommand('copy');}catch{}finally{temporary.remove();}
+        }
+        if(copied){status.textContent='Copied';noticeTimer=setTimeout(()=>{status.textContent='';},2500);}
+        else{field.value=text;fallback.hidden=false;status.textContent='Copy blocked';field.focus();field.select();}
+      }finally{
+        copying=false;copyButton.disabled=false;copyButton.removeAttribute('aria-busy');if(copied)copyButton.focus();
+      }
+    });
     panel.dataset.projectCard='true';body.prepend(card);
   }
   function enhance(){
