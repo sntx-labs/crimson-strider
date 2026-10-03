@@ -359,6 +359,8 @@
   const sourceIcons={
     github:'<path d="M9 19c-4 1-4-2-6-2m12 4v-4a3.5 3.5 0 0 0-1-3c3-.4 6-1.5 6-6a4.7 4.7 0 0 0-1.3-3.3 4.3 4.3 0 0 0-.1-3.3S17.4 1 15 2.6a11 11 0 0 0-6 0C6.6 1 5.4 1.4 5.4 1.4a4.3 4.3 0 0 0-.1 3.3A4.7 4.7 0 0 0 4 8c0 4.5 3 5.6 6 6a3.5 3.5 0 0 0-1 3v4"/>',
     download:'<path d="M12 3v12m-4-4 4 4 4-4M4 16v5h16v-5"/>',
+    chevron:'<path d="m6 9 6 6 6-6"/>',
+    link:'<path d="M10 13a5 5 0 0 0 7 .2l3-3a5 5 0 0 0-7-7l-1.7 1.7M14 11a5 5 0 0 0-7-.2l-3 3a5 5 0 0 0 7 7l1.7-1.7"/>',
     copy:'<rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/>'
   };
   function sourceElement(tag,className,text){
@@ -366,8 +368,8 @@
     if(text!==undefined)element.textContent=text;
     return element;
   }
-  function sourceRow(label,detail,icon,url){
-    const row=sourceElement(url?'a':'button','source-row');
+  function sourceRow(label,detail,icon,url,className='source-menu-item'){
+    const row=sourceElement(url?'a':'button',className);
     if(url){row.href=url;row.target='_blank';row.rel='noopener noreferrer';row.setAttribute('aria-label',project.title+' '+label+' (opens in a new tab)');}
     else row.type='button';
     const graphic=document.createElementNS('http://www.w3.org/2000/svg','svg');
@@ -399,36 +401,82 @@
     const intro=sourceElement('div','source-intro');
     intro.append(sourceElement('h1','labs-project-title',project.title),sourceElement('p','source-description',project.description));
     const actions=sourceElement('div','source-actions');actions.setAttribute('aria-label','Project source');
-    const github=sourceRow('GitHub',project.github?'View source':'Not available','github',project.github);
+    const github=sourceRow('GitHub','','github',project.github,'source-github');
     github.disabled=!project.github;
-    const download=sourceRow('Download',project.download?'Repository ZIP':'Not available','download',project.download);
-    download.disabled=!project.download;
-    const copyButton=sourceRow('Copy prompt','','copy');
-    const status=copyButton.querySelector('.source-action-detail');status.setAttribute('role','status');status.setAttribute('aria-live','polite');status.setAttribute('aria-atomic','true');
-    actions.append(github,download,copyButton);
+    if(!project.github){github.title='Source not available';github.setAttribute('aria-label','GitHub source not available');}
+    const split=sourceElement('div','source-split');
+    const copyButton=sourceRow('Copy prompt','','copy',null,'source-copy-button');
+    const toggle=sourceRow('','','chevron',null,'source-menu-toggle');
+    toggle.setAttribute('aria-label','More project actions');toggle.setAttribute('aria-haspopup','menu');toggle.setAttribute('aria-expanded','false');
+    const menu=sourceElement('div','source-menu');menu.id='labs-actions-'+projectSlug;menu.hidden=true;
+    menu.setAttribute('role','menu');menu.setAttribute('aria-label','Project actions');toggle.setAttribute('aria-controls',menu.id);
+    const promptItem=sourceRow('Copy prompt','Project context for your coding assistant.','copy');
+    const linkItem=sourceRow('Copy project link','Share the live experience.','link');
+    const downloadItem=sourceRow('Download source',project.download?'Repository ZIP. GitHub access required.':'Source not available.','download',project.download);
+    downloadItem.disabled=!project.download;
+    const menuItems=[promptItem,linkItem,downloadItem];
+    menuItems.forEach(item=>{item.setAttribute('role','menuitem');item.tabIndex=-1;});
+    menu.append(...menuItems);split.append(copyButton,toggle);actions.append(github,split,menu);
+    const status=sourceElement('span','source-status');status.setAttribute('role','status');status.setAttribute('aria-live','polite');status.setAttribute('aria-atomic','true');
     const fallback=sourceElement('div','prompt-copy-fallback');fallback.hidden=true;
     const label=sourceElement('label','','Select and copy this prompt');
     const field=sourceElement('textarea','');field.id='labs-prompt-'+projectSlug;field.rows=8;field.readOnly=true;field.setAttribute('aria-label',project.title+' agent prompt');label.htmlFor=field.id;
-    fallback.append(label,field);
-    card.append(intro,actions,fallback);
+    fallback.append(label,field);card.append(intro,actions,status,fallback);
+    function closeMenu(restoreFocus=false){
+      menu.hidden=true;toggle.setAttribute('aria-expanded','false');if(restoreFocus)toggle.focus();
+    }
+    function openMenu(last=false){
+      menu.hidden=false;toggle.setAttribute('aria-expanded','true');
+      const enabled=menuItems.filter(item=>!item.disabled);(last?enabled.at(-1):enabled[0])?.focus();
+      menu.scrollIntoView?.({block:'nearest',inline:'nearest'});
+    }
+    toggle.addEventListener('click',()=>{if(menu.hidden)openMenu();else closeMenu(true);});
+    toggle.addEventListener('keydown',event=>{
+      if(event.key==='ArrowDown'||event.key==='ArrowUp'){event.preventDefault();openMenu(event.key==='ArrowUp');}
+      else if(event.key==='Escape'){event.preventDefault();event.stopPropagation();closeMenu(true);}
+    });
+    menu.addEventListener('keydown',event=>{
+      const enabled=menuItems.filter(item=>!item.disabled),index=enabled.indexOf(document.activeElement);
+      let next;
+      if(event.key==='ArrowDown')next=(index+1)%enabled.length;
+      if(event.key==='ArrowUp')next=(index-1+enabled.length)%enabled.length;
+      if(event.key==='Home')next=0;
+      if(event.key==='End')next=enabled.length-1;
+      if(next!==undefined){event.preventDefault();enabled[next]?.focus();}
+      if(event.key==='Escape'){event.preventDefault();event.stopPropagation();closeMenu(true);}
+      if(event.key==='Tab')closeMenu();
+    });
+    // Capture observes outside interactions even when the panel stops scene input.
+    document.addEventListener('pointerdown',event=>{if(!menu.hidden&&!actions.contains(event.target))closeMenu();},true);
+    document.addEventListener('focusin',event=>{if(!menu.hidden&&!actions.contains(event.target))closeMenu();},true);
+    window.addEventListener('sh-panel-toggle',()=>closeMenu());
+    downloadItem.addEventListener('click',()=>closeMenu());
     let copying=false,noticeTimer;
-    copyButton.addEventListener('click',async()=>{
+    async function copyText(text,kind){
       if(copying)return;
-      copying=true;copyButton.disabled=true;copyButton.setAttribute('aria-busy','true');
-      clearTimeout(noticeTimer);status.textContent='';fallback.hidden=true;
-      const text=agentPrompt();let copied=false;
+      copying=true;closeMenu();[copyButton,promptItem,linkItem].forEach(item=>item.disabled=true);copyButton.setAttribute('aria-busy','true');
+      clearTimeout(noticeTimer);status.textContent='';copyButton.querySelector('.source-action-label').textContent='Copy prompt';fallback.hidden=true;
+      let copied=false;
       try{
         try{await navigator.clipboard.writeText(text);copied=true;}catch{}
         if(!copied){
-          const temporary=document.createElement('textarea');temporary.value=text;temporary.setAttribute('aria-label','Agent prompt');temporary.style.cssText='position:fixed;left:-9999px;top:0';document.body.append(temporary);temporary.select();
+          const temporary=document.createElement('textarea');temporary.value=text;temporary.setAttribute('aria-label',kind);temporary.style.cssText='position:fixed;left:-9999px;top:0';document.body.append(temporary);temporary.select();
           try{copied=document.execCommand('copy');}catch{}finally{temporary.remove();}
         }
-        if(copied){status.textContent='Copied';noticeTimer=setTimeout(()=>{status.textContent='';},2500);}
-        else{field.value=text;fallback.hidden=false;status.textContent='Copy blocked';field.focus();field.select();}
+        if(copied){
+          status.textContent=kind+' copied';copyButton.querySelector('.source-action-label').textContent='Copied';
+          noticeTimer=setTimeout(()=>{status.textContent='';copyButton.querySelector('.source-action-label').textContent='Copy prompt';},2500);
+        }else{
+          label.textContent='Select and copy this '+(kind==='Project link'?'link':'prompt');field.setAttribute('aria-label',project.title+' '+kind.toLowerCase());
+          field.value=text;fallback.hidden=false;status.textContent='Copy blocked';field.focus();field.select();
+        }
       }finally{
-        copying=false;copyButton.disabled=false;copyButton.removeAttribute('aria-busy');if(copied)copyButton.focus();
+        copying=false;[copyButton,promptItem,linkItem].forEach(item=>item.disabled=false);copyButton.removeAttribute('aria-busy');if(copied)copyButton.focus();
       }
-    });
+    }
+    copyButton.addEventListener('click',()=>copyText(agentPrompt(),'Prompt'));
+    promptItem.addEventListener('click',()=>copyText(agentPrompt(),'Prompt'));
+    linkItem.addEventListener('click',()=>copyText('https://labs.sntx.co/experiments/'+projectSlug+'/','Project link'));
     panel.dataset.projectCard='true';body.prepend(card);
   }
   function enhance(){
