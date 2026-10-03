@@ -410,11 +410,7 @@
     const label=sourceElement('label','','Select and copy this prompt');
     const field=sourceElement('textarea','');field.id='labs-prompt-'+projectSlug;field.rows=8;field.readOnly=true;field.setAttribute('aria-label',project.title+' agent prompt');label.htmlFor=field.id;
     fallback.append(label,field);
-    const footer=sourceElement('div','source-footer');
-    const meta=sourceElement('span','source-meta',project.technology);
-    const separator=sourceElement('span','','·');separator.setAttribute('aria-hidden','true');meta.append(separator,document.createTextNode(project.licenseLabel));
-    const shortcut=sourceElement('span','source-shortcut');shortcut.append(sourceElement('kbd','','~'),sourceElement('span','','Toggle panel'));footer.append(meta,shortcut);
-    card.append(intro,actions,fallback,footer);
+    card.append(intro,actions,fallback);
     let copying=false,noticeTimer;
     copyButton.addEventListener('click',async()=>{
       if(copying)return;

@@ -1,6 +1,6 @@
 # Crimson Strider
 
-Private working repository for [Crimson Strider](https://labs.sntx.co/experiments/crimson-strider/). Updated from Syntax Labs version 59, commit `687312a8e5e078ca34e6afee736d305442150125`, on 2026-10-03.
+Private working repository for [Crimson Strider](https://labs.sntx.co/experiments/crimson-strider/). Updated from Syntax Labs version 61, commit `ccbb95eb87e6c0631db3430e0836b282220ef1c8`, on 2026-10-03.
 
 ## Run the current Labs version
 

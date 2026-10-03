@@ -15,11 +15,6 @@
 .sh-panel .source-row:disabled svg{color:rgba(255,255,255,.32)}
 .sh-panel .source-row:disabled .source-action-detail{color:rgba(255,255,255,.42)}
 .sh-panel .source-row[aria-busy=true]{cursor:wait}
-.sh-panel .source-footer{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;padding:11px 14px 12px;border-top:1px solid var(--card-line);font:10px/1.5 var(--sh-font);color:rgba(255,255,255,.47)}
-.sh-panel .source-meta{display:flex;align-items:center;gap:6px;font-size:9px;white-space:nowrap}
-.sh-panel .source-meta>span{color:rgba(255,255,255,.25)}
-.sh-panel .source-shortcut{display:flex;align-items:center;gap:5px;white-space:nowrap;font-size:9px}
-.sh-panel .source-shortcut kbd{display:inline-flex;align-items:center;justify-content:center;width:17px;height:16px;border:1px solid #ffffff19;border-radius:3px;background:#ffffff03;color:#a4a4a4;font:11px/1 ui-monospace,monospace}
 .sh-panel .prompt-copy-fallback{padding:12px 14px 14px;border-top:1px solid var(--card-line);font:10px/1.6 var(--sh-font);color:#aaa}
 .sh-panel .prompt-copy-fallback[hidden]{display:none}
 .sh-panel .prompt-copy-fallback label{display:block;margin:0 0 7px}
