@@ -1,0 +1,2 @@
+# Preserve published snapshot bytes and checksums across platforms.
+public/** -text
