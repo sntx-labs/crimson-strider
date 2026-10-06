@@ -42,4 +42,6 @@ The in-project GitHub action links to this SNTX-Labs repository. Copy prompt inc
 
 `labs:verify` checks the reference file hashes before editing. Expected mismatches after intentional runtime edits should be reviewed and the snapshot manifest updated deliberately; do not suppress unexplained differences. `labs:build` assembles the runtime and does not recompile an authoring snapshot.
 
-Follow [@taylor_sntx on Twitter/X](https://x.com/taylor_sntx) for more experiments. For custom implementation help, [contact Syntax](https://sntx.co/).
+Follow [@taylor_sntx on Twitter/X](https://x.com/taylor_sntx) for more experiments. Want an experience like this, designed for your product? Work with Syntax on a custom implementation: [sntx.co](https://sntx.co/).
+
+The custom-implementation offer is also shown in the project card and copied prompt. It is an invitation to commission work, not an additional license restriction.

@@ -3,6 +3,10 @@
 .sh-panel .source-intro{padding:14px 14px 16px}
 .sh-panel .source-intro h1{margin:0;font:500 17px/1.35 var(--sh-font);letter-spacing:-.3px;text-transform:none;color:rgba(255,255,255,.9);overflow-wrap:anywhere}
 .sh-panel .source-description{margin:9px 0 0;font:400 12px/1.7 var(--sh-font);letter-spacing:0;color:rgba(255,255,255,.62)}
+.sh-panel .source-implementation{margin:0;padding:14px;border-top:1px solid var(--card-line);font:400 14px/1.55 var(--sh-font);letter-spacing:0;text-transform:none;color:rgba(255,255,255,.65);overflow-wrap:anywhere}
+.sh-panel .source-implementation a{color:rgba(255,255,255,.9);text-decoration:underline;text-underline-offset:3px}
+.sh-panel .source-implementation a:hover{color:#fff}
+.sh-panel .source-implementation a:focus-visible{outline:1px solid #ddd;outline-offset:3px}
 .sh-panel .source-actions{position:relative;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:12px;border-top:1px solid var(--card-line)}
 .sh-panel .source-github,.sh-panel .source-copy-button,.sh-panel .source-menu-toggle,.sh-panel .source-menu-item{display:flex;align-items:center;gap:7px;min-height:36px;box-sizing:border-box;margin:0;border:0;border-radius:0;background:none;color:rgba(255,255,255,.8);font:500 11px/1.45 var(--sh-font);letter-spacing:0;text-transform:none;text-align:left;text-decoration:none;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:background 120ms,color 120ms}
 .sh-panel .source-github{padding:0 2px;color:rgba(255,255,255,.64)}

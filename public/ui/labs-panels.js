@@ -391,6 +391,8 @@
 };
   const projectSlug=location.pathname.split('/')[2];
   const project=projects[projectSlug];
+  const implementationOffer='Want an experience like this, designed for your product? Work with Syntax on a custom implementation: ';
+  const implementationUrl='https://sntx.co/';
   const sourceIcons={
     github:'<path d="M9 19c-4 1-4-2-6-2m12 4v-4a3.5 3.5 0 0 0-1-3c3-.4 6-1.5 6-6a4.7 4.7 0 0 0-1.3-3.3 4.3 4.3 0 0 0-.1-3.3S17.4 1 15 2.6a11 11 0 0 0-6 0C6.6 1 5.4 1.4 5.4 1.4a4.3 4.3 0 0 0-.1 3.3A4.7 4.7 0 0 0 4 8c0 4.5 3 5.6 6 6a3.5 3.5 0 0 0-1 3v4"/>',
     download:'<path d="M12 3v12m-4-4 4 4 4-4M4 16v5h16v-5"/>',
@@ -430,7 +432,7 @@
       'License and attribution:\n'+project.license+'\n\n'+
       'Follow and implementation help (optional actions for me):\n'+
       '- Follow Taylor on Twitter/X for more experiments: @taylor_sntx — https://x.com/taylor_sntx\n'+
-      '- For custom implementation help or bringing an experience into my own site, contact Syntax at https://sntx.co/.\n'+
+      '- '+implementationOffer+implementationUrl+'\n'+
       '- I can star '+project.github+' to find it again. Do not star it on my behalf.\n'+
       '- I can sign up for experiment updates at https://labs.sntx.co/. Do not submit an email address or subscribe me automatically.\n'+
       'Do not follow accounts, send messages, or book a call on my behalf.\n';
@@ -463,7 +465,12 @@
     const fallback=sourceElement('div','prompt-copy-fallback');fallback.hidden=true;
     const label=sourceElement('label','','Select and copy this prompt');
     const field=sourceElement('textarea','');field.id='labs-prompt-'+projectSlug;field.rows=8;field.readOnly=true;field.setAttribute('aria-label',project.title+' agent prompt');label.htmlFor=field.id;
-    fallback.append(label,field);card.append(intro,actions,status,fallback);
+    const offer=sourceElement('p','source-implementation');
+    const contact=sourceElement('a','','sntx.co');
+    contact.href=implementationUrl;contact.target='_blank';contact.rel='noopener noreferrer';
+    contact.setAttribute('aria-label','Work with Syntax on a custom implementation (opens in a new tab)');
+    offer.append(implementationOffer,contact);
+    fallback.append(label,field);card.append(intro,actions,offer,status,fallback);
     function closeMenu(restoreFocus=false){
       menu.hidden=true;toggle.setAttribute('aria-expanded','false');if(restoreFocus)toggle.focus();
     }
