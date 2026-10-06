@@ -249,33 +249,45 @@
     "title": "Tal Cera: Surface Operations",
     "description": "A quiet observation bay overlooking an alien frontier.",
     "technology": "Three.js",
-    "setup": "This Labs scene uses a Vite-built Three.js observation bay with walking and view modes, exposure controls, and streamed geometry. Preserve the walking controls, camera framing, geometry loading, and mobile joystick. The provided source README describes a Node.js 24 build with npm ci and npm run build; confirm these against an owner-provided checkout before running them.",
+    "setup": "The runtime is in public/experiments/lilac-frontier/. Editable scene modules and rebuild instructions are in its source/README.md and source/lilac-frontier/src/. For authoring, first run npm run labs:authoring from the repository root, then follow source/README.md and the printed npm ci/build instructions. Preserve walking and view modes, streamed geometry, camera framing, exposure, and mobile joystick.",
     "license": "Preserve the existing third-party notices, including the Blender-derived noise shader GPL-2.0-or-later notice. Do not apply one blanket license to the project or its geometry.",
-    "licenseLabel": "Source not linked"
+    "licenseLabel": "See repository notices",
+    "github": "https://github.com/sntx-labs/tal-cera-surface-operations",
+    "download": "https://github.com/sntx-labs/tal-cera-surface-operations/archive/refs/heads/main.zip",
+    "repository": "tal-cera-surface-operations"
   },
   "vesper-drift": {
     "title": "Avocet 2-6",
     "description": "Pilot a spacecraft through an endless asteroid belt.",
     "technology": "Three.js",
-    "setup": "This Labs scene uses JavaScript ES modules and Three.js for spacecraft flight, asteroid fields, mouse modes, and cruise assist. Preserve flight-controls.js behavior, camera orbit, return-home controls, keyboard flight, and touch input. Inspect an owner-provided checkout for its actual entry point and run instructions; do not invent npm scripts.",
-    "license": "No project-wide source license is established by this Labs page. Read the actual LICENSE, dependency notices, and asset terms in the owner-provided project. Do not infer permission to reuse or redistribute from the fact that the demo is public.",
-    "licenseLabel": "Source not linked"
+    "setup": "Edit the ES modules in public/experiments/vesper-drift/, including flight-controls.js. Preserve the default orbit view, flight and chase modes, A/D roll, reticule, cruise assist, return-home controls, and touch flight.",
+    "license": "No project-wide source license is established by this Labs page. Read the actual LICENSE, dependency notices, and asset terms in the repository. Do not infer permission to reuse or redistribute from the fact that the demo is public.",
+    "licenseLabel": "See repository notices",
+    "github": "https://github.com/sntx-labs/avocet-2-6",
+    "download": "https://github.com/sntx-labs/avocet-2-6/archive/refs/heads/main.zip",
+    "repository": "avocet-2-6"
   },
   "2000-bugs": {
     "title": "2000 Mechanical Bugs",
     "description": "A swarm of black steel machines that follows your pointer and scatters in shockwaves.",
     "technology": "Three.js",
-    "setup": "This Labs scene uses local Three.js ES modules with main.js, bug.js, simulation.js, and steel.js. Preserve pointer pursuit, touch drag, shockwaves, scatter, pause, machine count, rendering, and reset. For an authorized complete static checkout, serve its root over HTTP with its vendor dependencies present; confirm its own instructions first.",
-    "license": "No project-wide source license is established by this Labs page. Read the actual LICENSE, dependency notices, and asset terms in the owner-provided project. Do not infer permission to reuse or redistribute from the fact that the demo is public.",
-    "licenseLabel": "Source not linked"
+    "setup": "Edit public/experiments/2000-bugs/, especially main.js, bug.js, simulation.js, and steel.js. Preserve pointer pursuit, touch drag, shockwaves, scatter, pause, authored machine count, rendering, and reset.",
+    "license": "No project-wide source license is established by this Labs page. Read the actual LICENSE, dependency notices, and asset terms in the repository. Do not infer permission to reuse or redistribute from the fact that the demo is public.",
+    "licenseLabel": "See repository notices",
+    "github": "https://github.com/sntx-labs/2000-bugs",
+    "download": "https://github.com/sntx-labs/2000-bugs/archive/refs/heads/main.zip",
+    "repository": "2000-bugs"
   },
   "portfolio-particle-spheres": {
     "title": "Particle Spheres",
     "description": "An interactive study of spherical forms built from moving particles.",
     "technology": "Three.js",
-    "setup": "This Labs scene is a bundled Three.js particle-sphere study. Preserve sphere count, rotation speed, resting and active colors, pointer interaction, resize handling, and reset. Obtain the editable project before choosing install or build commands; the deployed bundle is not a substitute for a source checkout.",
-    "license": "No project-wide source license is established by this Labs page. Read the actual LICENSE, dependency notices, and asset terms in the owner-provided project. Do not infer permission to reuse or redistribute from the fact that the demo is public.",
-    "licenseLabel": "Source not linked"
+    "setup": "The published runtime is in public/experiments/portfolio-particle-spheres/. Editable authoring source is in authoring/particle-spheres/. Run npm run labs:authoring at the root to prepare its assets, then follow the printed install/build instructions in that authoring folder. The authoring snapshot may predate Labs changes; compare against the published runtime before replacing a bundle. Preserve the authored defaults, sphere count, rotation, resting and active colors, pointer interaction, resize, and reset.",
+    "license": "No project-wide source license is established by this Labs page. Read the actual LICENSE, dependency notices, and asset terms in the repository. Do not infer permission to reuse or redistribute from the fact that the demo is public.",
+    "licenseLabel": "See repository notices",
+    "github": "https://github.com/sntx-labs/particle-spheres",
+    "download": "https://github.com/sntx-labs/particle-spheres/archive/refs/heads/main.zip",
+    "repository": "particle-spheres"
   },
   "engine-lab": {
     "title": "Engine Lab",
@@ -283,33 +295,43 @@
     "github": "https://github.com/sntx-labs/engine-lab",
     "download": "https://github.com/sntx-labs/engine-lab/archive/refs/heads/main.zip",
     "technology": "Web Audio",
-    "setup": "The sntx-labs repository contains the current Labs snapshot alongside the original standalone project. Read LABS.md first: Node.js 20 or newer, npm run labs:dev to run the Labs adaptation, npm run labs:verify to validate its files, and npm run labs:build to assemble a deployable snapshot. This is a browser-based Web Audio engine-sound lab with synthesis, layered loops, a scope, keyboard and pointer acceleration, braking, and boost. Preserve audio activation by user gesture, sample loading, volume, pitch, brightness, and reset. The current upstream README documents npm install, npm run dev, and Vite's local URL with engine-lab.html; npm run build creates the production build. Confirm the current README and package scripts before running commands, and test audio after a user gesture. The Labs snapshot has localized audio and dependencies and an adapted SHPanel, so upstream may differ.",
+    "setup": "Edit the Labs runtime in public/experiments/engine-lab/. The original standalone source and README are retained at repository root: its separate Vite workflow uses npm install, npm run dev, engine-lab.html, and npm run build. Use the labs scripts below to reproduce the Labs adaptation instead. Preserve audio activation by user gesture, localized sample loading, synthesis, layered loops, scope, keyboard/pointer acceleration, braking, boost, and reset. Test audio after a user gesture.",
     "license": "The existing Engine Lab source is CC BY 4.0. Preserve appropriate credit, a link to the license, and an indication of changes. Check sample and dependency licenses separately; do not replace existing license terms.",
-    "licenseLabel": "CC BY 4.0"
+    "licenseLabel": "CC BY 4.0",
+    "repository": "engine-lab"
   },
   "2026-07-14-viscous-ink": {
     "title": "Liquid Painting",
     "description": "Paint with flowing pigment, textured paper, and fluid motion.",
     "technology": "Three.js",
-    "setup": "This Labs scene is a Three.js/WebGL fluid painting study with shader-based advection, paper texture, two ink colors, brush size, and stroke force. Preserve pointer and touch painting, the clear action, reset, simulation behavior, and resize. For an authorized complete static checkout, inspect its ES module imports and serve the root over HTTP; do not assume a package build exists.",
-    "license": "No project-wide source license is established by this Labs page. Read the actual LICENSE, dependency notices, and asset terms in the owner-provided project. Do not infer permission to reuse or redistribute from the fact that the demo is public.",
-    "licenseLabel": "Source not linked"
+    "setup": "Liquid Painting retains the historical repository name viscous-ink. Edit its Three.js/WebGL fluid modules in public/experiments/2026-07-14-viscous-ink/. Preserve the clean white startup, shader advection, paper texture, two ink colors, brush size, low stroke force, pointer/touch painting, clear action, reset, and resize.",
+    "license": "No project-wide source license is established by this Labs page. Read the actual LICENSE, dependency notices, and asset terms in the repository. Do not infer permission to reuse or redistribute from the fact that the demo is public.",
+    "licenseLabel": "See repository notices",
+    "github": "https://github.com/sntx-labs/viscous-ink",
+    "download": "https://github.com/sntx-labs/viscous-ink/archive/refs/heads/main.zip",
+    "repository": "viscous-ink"
   },
   "asterion-cockpit": {
     "title": "ASTERION / Cockpit",
     "description": "Explore the controls, lighting, and atmosphere of a spacecraft cockpit.",
     "technology": "Three.js",
-    "setup": "This Labs scene is a bundled spacecraft cockpit with an arrival sequence, autopilot, thrust, cabin lights, exposure, and reset. Preserve the arrival replay, camera, lighting, control bindings, and streamed large assets. Obtain editable source and the matching asset set before selecting the build workflow.",
+    "setup": "The published runtime is in public/experiments/asterion-cockpit/. Editable authoring source is in authoring/asterion-cockpit/. Run npm run labs:authoring at the root to reconstruct/copy its large assets, then follow the printed npm ci/build instructions. The authoring snapshot may predate Labs changes; compare with the runtime before replacing its bundle. Preserve loading/arrival sequence, arrival replay, camera, autopilot, thrust, cabin lights, exposure, reset, and streamed assets.",
     "license": "Check the licenses and provenance of the cockpit models, textures, and other assets separately before reuse or redistribution. Do not infer asset rights from the rendering library license.",
-    "licenseLabel": "Source not linked"
+    "licenseLabel": "See repository notices",
+    "github": "https://github.com/sntx-labs/asterion-cockpit",
+    "download": "https://github.com/sntx-labs/asterion-cockpit/archive/refs/heads/main.zip",
+    "repository": "asterion-cockpit"
   },
   "twigl-plume-sphere": {
     "title": "Star Simulator",
     "description": "Explore six animated star compositions, from flowing currents to a turbulent chromosphere.",
     "technology": "WebGL",
-    "setup": "This Labs scene is a bundled shader-based star simulator with six authored presets: Azure Plume, Chromosphere Surge, Ember Veins, Ember Current, Abyssal Current, and White Coral Labyrinth. Preserve all six presets, animation, rendering, and responsive canvas behavior. Inspect the owner-provided editable source and its package scripts before choosing a build workflow.",
+    "setup": "The published runtime is in public/experiments/twigl-plume-sphere/. Editable authoring source is in authoring/star-simulator/. Run npm run labs:authoring at the root to prepare assets, then follow the printed install/build instructions. The authoring snapshot may predate Labs changes. Preserve the pre-entry High/Medium/Low graphics choice, per-preset rendering budgets, Chromosphere Surge startup, and all six presets: Azure Plume, Chromosphere Surge, Ember Veins, Ember Current, Abyssal Current, and White Coral Labyrinth. Keep the simple preset-only panel, animation, and responsive canvas.",
     "license": "Preserve the existing shader credits and third-party notices, including applicable Yohei Nishitsuji MIT attribution. Do not replace or remove upstream attribution or assume one license covers every asset.",
-    "licenseLabel": "Source not linked"
+    "licenseLabel": "See repository notices",
+    "github": "https://github.com/sntx-labs/star-simulator",
+    "download": "https://github.com/sntx-labs/star-simulator/archive/refs/heads/main.zip",
+    "repository": "star-simulator"
   },
   "particle-landscape": {
     "title": "Particle Landscape",
@@ -317,41 +339,54 @@
     "github": "https://github.com/sntx-labs/particle-landscape",
     "download": "https://github.com/sntx-labs/particle-landscape/archive/refs/heads/main.zip",
     "technology": "Three.js",
-    "setup": "The sntx-labs repository contains the current Labs snapshot alongside the original standalone project. Read LABS.md first: Node.js 20 or newer, npm run labs:dev to run the Labs adaptation, npm run labs:verify to validate its files, and npm run labs:build to assemble a deployable snapshot. The upstream README describes a static Three.js/WebGL 2 study with ES modules/CDN imports, no build step, index.html, and assets/heightmap_512x512.png. Read the current README and imports first. For local testing, use a static HTTP server from the repository root; if Python 3 is already available, python3 -m http.server 8000 is suitable. Open http://localhost:8000 in a WebGL 2 browser. Preserve heightmap loading, tiling, pointer hover, fog, animation, camera behavior, and reset. Labs was imported from upstream commit a940f8a3bb9495a36e6296c16707375f26892648 and adapted to SHPanel with a docked panel, artwork-first launch, Explore/Advanced groups, settings export/reset, and oval framing. The upstream README describes Tweakpane: do not claim the upstream repository exactly reproduces the Labs adaptation.",
+    "setup": "Edit the Labs modules in public/experiments/particle-landscape/. Preserve heightmap loading, tiling, pointer hover, fog, animation, camera, reset, oval framing, and the airplane-disabled default. The original standalone source and README are retained at repository root and describe Tweakpane and CDN imports; the Labs adaptation uses local dependencies and SHPanel. Labs was originally imported from upstream commit a940f8a3bb9495a36e6296c16707375f26892648. Use the labs scripts below for the current Labs version instead of serving the original root index.html.",
     "license": "The upstream Particle Landscape source is MIT-licensed. Preserve its copyright and permission notice in copies or substantial portions. Check dependency and asset licenses separately; do not replace the upstream MIT license.",
-    "licenseLabel": "MIT source"
+    "licenseLabel": "MIT source",
+    "repository": "particle-landscape"
   },
   "topo-contour-terrain": {
     "title": "Topo Contour Terrain",
     "description": "Shape a procedural landscape drawn in topographic contour lines.",
     "technology": "Three.js",
-    "setup": "This Labs scene uses Three.js, shader contour lines, heightmap displacement, bloom, orbit controls, and color/elevation settings. Its included README describes serving the folder with a static HTTP server, and uses heightmap_512x512.png. Preserve contour rendering, camera drag/zoom, scroll speed, reset, and all shader controls. Confirm the actual entry point, imports, and run instructions in the owner-provided source first.",
-    "license": "No project-wide source license is established by this Labs page. Read the actual LICENSE, dependency notices, and asset terms in the owner-provided project. Do not infer permission to reuse or redistribute from the fact that the demo is public.",
-    "licenseLabel": "Source not linked"
+    "setup": "Edit the modules and shaders in public/experiments/topo-contour-terrain/. Preserve heightmap_512x512.png loading, contour lines, CRT display effects, bloom, color/elevation settings, drag/zoom, scroll speed, and reset.",
+    "license": "No project-wide source license is established by this Labs page. Read the actual LICENSE, dependency notices, and asset terms in the repository. Do not infer permission to reuse or redistribute from the fact that the demo is public.",
+    "licenseLabel": "See repository notices",
+    "github": "https://github.com/sntx-labs/topo-contour-terrain",
+    "download": "https://github.com/sntx-labs/topo-contour-terrain/archive/refs/heads/main.zip",
+    "repository": "topo-contour-terrain"
   },
   "pc-greebles-editor": {
     "title": "PC: Greebles Editor",
     "description": "Build intricate mechanical surfaces from procedural geometric details.",
     "technology": "Three.js",
-    "setup": "This Labs scene is a bundled procedural mechanical-surface editor with color presets, density, speed, and reset. Preserve the live geometry controls, camera, materials, and reset behavior. Obtain the editable source and inspect its current scripts before choosing an install or build workflow.",
+    "setup": "The published runtime is in public/experiments/pc-greebles-editor/. Editable authoring source is in authoring/greebles-editor/. Run npm run labs:authoring at the root to prepare assets, then follow the printed install/build instructions. Compare this older authoring snapshot with the current runtime before replacing a bundle. Preserve procedural geometry controls, camera, materials, color presets, density, speed, and reset.",
     "license": "Read the license and any grants accompanying the provided editor source, models, and assets. Preserve applicable third-party notices and existing grants; do not assume a public demo grants reuse rights.",
-    "licenseLabel": "Source not linked"
+    "licenseLabel": "See repository notices",
+    "github": "https://github.com/sntx-labs/greebles-editor",
+    "download": "https://github.com/sntx-labs/greebles-editor/archive/refs/heads/main.zip",
+    "repository": "greebles-editor"
   },
   "crimson-strider": {
     "title": "Crimson Strider",
     "description": "A mechanical walker study in motion, materials, and articulated limbs.",
     "technology": "Three.js",
-    "setup": "This Labs scene uses local Three.js ES modules with main.js, kinematics.js, motion.js, stance.js, and steel.js. Preserve articulated stepping, follow-pointer behavior, pace, stage color, camera reset, and full reset. For an authorized complete static checkout, inspect its module imports and serve its root over HTTP with vendor dependencies present.",
-    "license": "No project-wide source license is established by this Labs page. Read the actual LICENSE, dependency notices, and asset terms in the owner-provided project. Do not infer permission to reuse or redistribute from the fact that the demo is public.",
-    "licenseLabel": "Source not linked"
+    "setup": "Edit public/experiments/crimson-strider/, especially main.js, kinematics.js, motion.js, stance.js, and steel.js. Preserve articulated stepping, follow-pointer behavior, pace, stage color, camera reset, and full reset.",
+    "license": "No project-wide source license is established by this Labs page. Read the actual LICENSE, dependency notices, and asset terms in the repository. Do not infer permission to reuse or redistribute from the fact that the demo is public.",
+    "licenseLabel": "See repository notices",
+    "github": "https://github.com/sntx-labs/crimson-strider",
+    "download": "https://github.com/sntx-labs/crimson-strider/archive/refs/heads/main.zip",
+    "repository": "crimson-strider"
   },
   "morrow-hauler": {
     "title": "Morrow Hauler",
     "description": "Drive a lunar rover across an illustrated, procedural landscape.",
     "technology": "Three.js",
-    "setup": "This Labs scene uses Three.js ES modules for a lunar rover, terrain, illustration, engraving, and tires. Preserve WASD/arrow driving, Space braking, R reset, C camera switching, camera modes, top speed, ground color, pause, and touch behavior. For an authorized complete static checkout, inspect its imports and serve its root over HTTP with its dependencies present.",
-    "license": "No project-wide source license is established by this Labs page. Read the actual LICENSE, dependency notices, and asset terms in the owner-provided project. Do not infer permission to reuse or redistribute from the fact that the demo is public.",
-    "licenseLabel": "Source not linked"
+    "setup": "Edit the Three.js modules in public/experiments/morrow-hauler/ for rover, terrain, illustration, engraving, and tires. Preserve WASD/arrow driving, Space braking, R reset, C camera switching, camera modes, top speed, ground color, pause, and touch behavior.",
+    "license": "No project-wide source license is established by this Labs page. Read the actual LICENSE, dependency notices, and asset terms in the repository. Do not infer permission to reuse or redistribute from the fact that the demo is public.",
+    "licenseLabel": "See repository notices",
+    "github": "https://github.com/sntx-labs/morrow-hauler",
+    "download": "https://github.com/sntx-labs/morrow-hauler/archive/refs/heads/main.zip",
+    "repository": "morrow-hauler"
   }
 };
   const projectSlug=location.pathname.split('/')[2];
@@ -378,20 +413,27 @@
     return row;
   }
   function agentPrompt(){
-    const source=project.github
-      ?'Source repository:\n'+project.github+'\n\nRead the current README, LICENSE, source, and any agent instructions. Confirm the default branch and current commit. Clone into a new working directory, or use my existing checkout if I provide one. Do not overwrite existing local changes.'
-      :'Source availability:\nA public source repository and downloadable source release are not linked from this Labs page. Ask me for an authorized repository, archive, or existing checkout before implementation. Do not invent a GitHub destination, clone command, or source license.';
     return 'Help me explore and adapt '+project.title+' for my project.\n\n'+
       'My goal: [describe the change, product, or experiment I want to make].\n\n'+
-      project.description+'\n\nLive Labs reference:\nhttps://labs.sntx.co/experiments/'+projectSlug+'/\n\n'+source+'\n\n'+
-      'Project and setup context:\n'+project.setup+'\n\n'+
-      'Labs integration:\nThe live demo uses SHPanel controls and a Labs navigation shell. Treat it as a deployed snapshot; an upstream repository may differ. If I need the exact Labs adaptation, ask for the relevant Labs source before changing the architecture. Preserve existing controls, rendering, reset/export, keyboard and touch interactions, and mobile layout. Inspect the actual project before installing dependencies; never invent package scripts.\n\n'+
-      'Implementation and verification:\nKeep the requested change focused. Test the scene, controls, repeated actions, panel open/close, resize behavior, and browser console. Report what actually ran and any blocked checks. Explain the changed files, run instructions, and remaining decisions. Do not deploy or publish without my request.\n\n'+
+      project.description+'\n\nLive Labs reference:\nhttps://labs.sntx.co/experiments/'+projectSlug+'/\n\n'+
+      'GitHub repository (SNTX Labs):\n'+project.github+'\n\n'+
+      'Get the source and run locally:\nRead README.md, LABS.md, license/third-party notices, and any repository instructions first. Requires Git and Node.js 20+ with npm. Clone into a new directory, or use my existing checkout without overwriting local changes. The main branch contains the Labs snapshot.\n\n'+
+      'git clone '+project.github+'.git\n'+
+      'cd '+project.repository+'\n'+
+      'npm run labs:verify\n'+
+      'npm run labs:dev\n\n'+
+      'No dependency installation is needed for this Labs preview. Open the localhost URL printed by the server at /experiments/'+projectSlug+'/. Keep the server running; stop it with Ctrl+C. If GitHub denies access, ask me for authorized access or a source archive; do not substitute a different repository.\n\n'+
+      'Project-specific editing:\n'+project.setup+'\n\n'+
+      'Build and verify:\nFrom the repository root, npm run labs:build creates dist/ and reconstructs any large assets from their checked-in parts. This assembles the published runtime; it does not recompile a separate authoring snapshot. npm run labs:verify checks the checked-in snapshot hashes before editing; an intentional runtime edit changes those hashes. Inspect and document those changes rather than hiding a mismatch. Test the built output over HTTP, not file://.\n\n'+
+      'Labs integration:\nThe repository includes the Labs navigation shell, loading UI, and SHPanel in public/ui/. Preserve the authored startup, controls, reset/export where available, keyboard/touch interactions, and mobile layout. Keep changes focused on my goal. Compare any older authoring source with the current runtime before rebuilding it.\n\n'+
+      'Implementation and verification:\nTest the scene, controls, repeated actions, panel open/close, resize behavior, and browser console. Report what actually ran and any blocked checks. Explain changed files, run instructions, and remaining decisions. Do not deploy or publish without my request.\n\n'+
       'License and attribution:\n'+project.license+'\n\n'+
-      'Optional next steps for me, not automatic agent actions:\n'+
-      (project.github?'- I can star '+project.github+' to find it again. Do not star it on my behalf.\n':'')+
-      '- I can choose to sign up for occasional experiment emails at https://labs.sntx.co/. Do not submit an email address or subscribe me automatically.\n'+
-      '- For custom implementation help, I can use the Book a Call link at https://www.sntx.co/. Do not send a message or book a call on my behalf.\n';
+      'Follow and implementation help (optional actions for me):\n'+
+      '- Follow Taylor on Twitter/X for more experiments: @taylor_sntx — https://x.com/taylor_sntx\n'+
+      '- For custom implementation help or bringing an experience into my own site, contact Syntax at https://sntx.co/.\n'+
+      '- I can star '+project.github+' to find it again. Do not star it on my behalf.\n'+
+      '- I can sign up for experiment updates at https://labs.sntx.co/. Do not submit an email address or subscribe me automatically.\n'+
+      'Do not follow accounts, send messages, or book a call on my behalf.\n';
   }
   function projectCard(panel){
     const body=panel.querySelector('.sh-panel-body');
