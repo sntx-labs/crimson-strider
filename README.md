@@ -1,6 +1,6 @@
 # Crimson Strider
 
-Syntax Labs experiment. This repository is private while being prepared for release.
+Syntax Labs experiment. Public source repository for the linked live experience.
 
 [Live experience](https://labs.sntx.co/experiments/crimson-strider/) · [Run and edit this project](LABS.md)
 

@@ -250,11 +250,12 @@
     "description": "A quiet observation bay overlooking an alien frontier.",
     "technology": "Three.js",
     "setup": "The runtime is in public/experiments/lilac-frontier/. Editable scene modules and rebuild instructions are in its source/README.md and source/lilac-frontier/src/. For authoring, first run npm run labs:authoring from the repository root, then follow source/README.md and the printed npm ci/build instructions. Preserve walking and view modes, streamed geometry, camera framing, exposure, and mobile joystick.",
-    "license": "Preserve the existing third-party notices, including the Blender-derived noise shader GPL-2.0-or-later notice. Do not apply one blanket license to the project or its geometry.",
+    "license": "The current Tal Cera runtime uses the independently authored MIT noise shader documented in noise-provenance.json and licenses/INDEPENDENT-NOISE-MIT.txt. Preserve current third-party notices and review geometry terms separately. Historical versions may carry different notices; do not apply one blanket license to the project or its geometry.",
     "licenseLabel": "See repository notices",
     "github": "https://github.com/sntx-labs/tal-cera-surface-operations",
     "download": "https://github.com/sntx-labs/tal-cera-surface-operations/archive/refs/heads/main.zip",
-    "repository": "tal-cera-surface-operations"
+    "repository": "tal-cera-surface-operations",
+    "sourceStatus": "public"
   },
   "vesper-drift": {
     "title": "Avocet 2-6",
@@ -265,7 +266,8 @@
     "licenseLabel": "See repository notices",
     "github": "https://github.com/sntx-labs/avocet-2-6",
     "download": "https://github.com/sntx-labs/avocet-2-6/archive/refs/heads/main.zip",
-    "repository": "avocet-2-6"
+    "repository": "avocet-2-6",
+    "sourceStatus": "public"
   },
   "2000-bugs": {
     "title": "2000 Mechanical Bugs",
@@ -276,7 +278,8 @@
     "licenseLabel": "See repository notices",
     "github": "https://github.com/sntx-labs/2000-bugs",
     "download": "https://github.com/sntx-labs/2000-bugs/archive/refs/heads/main.zip",
-    "repository": "2000-bugs"
+    "repository": "2000-bugs",
+    "sourceStatus": "public"
   },
   "portfolio-particle-spheres": {
     "title": "Particle Spheres",
@@ -287,7 +290,8 @@
     "licenseLabel": "See repository notices",
     "github": "https://github.com/sntx-labs/particle-spheres",
     "download": "https://github.com/sntx-labs/particle-spheres/archive/refs/heads/main.zip",
-    "repository": "particle-spheres"
+    "repository": "particle-spheres",
+    "sourceStatus": "public"
   },
   "engine-lab": {
     "title": "Engine Lab",
@@ -298,7 +302,8 @@
     "setup": "Edit the Labs runtime in public/experiments/engine-lab/. The original standalone source and README are retained at repository root: its separate Vite workflow uses npm install, npm run dev, engine-lab.html, and npm run build. Use the labs scripts below to reproduce the Labs adaptation instead. Preserve audio activation by user gesture, localized sample loading, synthesis, layered loops, scope, keyboard/pointer acceleration, braking, boost, and reset. Test audio after a user gesture.",
     "license": "The existing Engine Lab source is CC BY 4.0. Preserve appropriate credit, a link to the license, and an indication of changes. Check sample and dependency licenses separately; do not replace existing license terms.",
     "licenseLabel": "CC BY 4.0",
-    "repository": "engine-lab"
+    "repository": "engine-lab",
+    "sourceStatus": "public"
   },
   "2026-07-14-viscous-ink": {
     "title": "Liquid Painting",
@@ -309,29 +314,32 @@
     "licenseLabel": "See repository notices",
     "github": "https://github.com/sntx-labs/viscous-ink",
     "download": "https://github.com/sntx-labs/viscous-ink/archive/refs/heads/main.zip",
-    "repository": "viscous-ink"
+    "repository": "viscous-ink",
+    "sourceStatus": "public"
   },
   "asterion-cockpit": {
     "title": "ASTERION / Cockpit",
     "description": "Explore the controls, lighting, and atmosphere of a spacecraft cockpit.",
     "technology": "Three.js",
     "setup": "The published runtime is in public/experiments/asterion-cockpit/. Editable authoring source is in authoring/asterion-cockpit/. Run npm run labs:authoring at the root to reconstruct/copy its large assets, then follow the printed npm ci/build instructions. The authoring snapshot may predate Labs changes; compare with the runtime before replacing its bundle. Preserve loading/arrival sequence, arrival replay, camera, autopilot, thrust, cabin lights, exposure, reset, and streamed assets.",
-    "license": "Check the licenses and provenance of the cockpit models, textures, and other assets separately before reuse or redistribution. Do not infer asset rights from the rendering library license.",
-    "licenseLabel": "See repository notices",
-    "github": "https://github.com/sntx-labs/asterion-cockpit",
-    "download": "https://github.com/sntx-labs/asterion-cockpit/archive/refs/heads/main.zip",
-    "repository": "asterion-cockpit"
+    "license": "Taylor’s ASTERION application code is closed source. Its models, textures and other assets retain their separate terms; a public demo is not a grant to reuse them. Existing asset entitlement and browser-delivery checks remain unresolved.",
+    "licenseLabel": "Closed source",
+    "repository": "asterion-cockpit",
+    "sourceStatus": "closed",
+    "referenceNotes": "Preserve the original cockpit artwork, arrival sequence, arrival replay, camera, autopilot, thrust, cabin lighting and exposure when describing the reference. No asset replacement or extraction is authorized."
   },
   "twigl-plume-sphere": {
     "title": "Star Simulator",
     "description": "Explore six animated star compositions, from flowing currents to a turbulent chromosphere.",
     "technology": "WebGL",
     "setup": "The published runtime is in public/experiments/twigl-plume-sphere/. Editable authoring source is in authoring/star-simulator/. Run npm run labs:authoring at the root to prepare assets, then follow the printed install/build instructions. The authoring snapshot may predate Labs changes. Preserve the pre-entry High/Medium/Low graphics choice, per-preset rendering budgets, Chromosphere Surge startup, and all six presets: Azure Plume, Chromosphere Surge, Ember Veins, Ember Current, Abyssal Current, and White Coral Labyrinth. Keep the simple preset-only panel, animation, and responsive canvas.",
-    "license": "Preserve the existing shader credits and third-party notices, including applicable Yohei Nishitsuji MIT attribution. Do not replace or remove upstream attribution or assume one license covers every asset.",
-    "licenseLabel": "See repository notices",
+    "license": "Taylor's Star Simulator application and wrapper code is MIT-licensed. The six credited Yohei Nishitsuji shader snippets retain their separate MIT grant; preserve the full copyright, permission text and exact snippet provenance in public/experiments/twigl-plume-sphere/THIRD_PARTY_NOTICES.md. Preserve Three.js, Lucide and IBM Plex font notices and their separate terms. The code license does not replace asset terms.",
+    "licenseLabel": "MIT source · third-party notices",
+    "repository": "star-simulator",
+    "sourceStatus": "public",
+    "referenceNotes": "The reference has six compositions: Azure Plume, Chromosphere Surge, Ember Veins, Ember Current, Abyssal Current and White Coral Labyrinth. Preserve its selected art direction, preset-only controls and responsive presentation when describing the brief.",
     "github": "https://github.com/sntx-labs/star-simulator",
-    "download": "https://github.com/sntx-labs/star-simulator/archive/refs/heads/main.zip",
-    "repository": "star-simulator"
+    "download": "https://github.com/sntx-labs/star-simulator/archive/refs/heads/main.zip"
   },
   "particle-landscape": {
     "title": "Particle Landscape",
@@ -342,7 +350,8 @@
     "setup": "Edit the Labs modules in public/experiments/particle-landscape/. Preserve heightmap loading, tiling, pointer hover, fog, animation, camera, reset, oval framing, and the airplane-disabled default. The original standalone source and README are retained at repository root and describe Tweakpane and CDN imports; the Labs adaptation uses local dependencies and SHPanel. Labs was originally imported from upstream commit a940f8a3bb9495a36e6296c16707375f26892648. Use the labs scripts below for the current Labs version instead of serving the original root index.html.",
     "license": "The upstream Particle Landscape source is MIT-licensed. Preserve its copyright and permission notice in copies or substantial portions. Check dependency and asset licenses separately; do not replace the upstream MIT license.",
     "licenseLabel": "MIT source",
-    "repository": "particle-landscape"
+    "repository": "particle-landscape",
+    "sourceStatus": "public"
   },
   "topo-contour-terrain": {
     "title": "Topo Contour Terrain",
@@ -353,7 +362,8 @@
     "licenseLabel": "See repository notices",
     "github": "https://github.com/sntx-labs/topo-contour-terrain",
     "download": "https://github.com/sntx-labs/topo-contour-terrain/archive/refs/heads/main.zip",
-    "repository": "topo-contour-terrain"
+    "repository": "topo-contour-terrain",
+    "sourceStatus": "public"
   },
   "pc-greebles-editor": {
     "title": "PC: Greebles Editor",
@@ -364,7 +374,8 @@
     "licenseLabel": "See repository notices",
     "github": "https://github.com/sntx-labs/greebles-editor",
     "download": "https://github.com/sntx-labs/greebles-editor/archive/refs/heads/main.zip",
-    "repository": "greebles-editor"
+    "repository": "greebles-editor",
+    "sourceStatus": "public"
   },
   "crimson-strider": {
     "title": "Crimson Strider",
@@ -375,7 +386,8 @@
     "licenseLabel": "See repository notices",
     "github": "https://github.com/sntx-labs/crimson-strider",
     "download": "https://github.com/sntx-labs/crimson-strider/archive/refs/heads/main.zip",
-    "repository": "crimson-strider"
+    "repository": "crimson-strider",
+    "sourceStatus": "public"
   },
   "morrow-hauler": {
     "title": "Morrow Hauler",
@@ -386,7 +398,8 @@
     "licenseLabel": "See repository notices",
     "github": "https://github.com/sntx-labs/morrow-hauler",
     "download": "https://github.com/sntx-labs/morrow-hauler/archive/refs/heads/main.zip",
-    "repository": "morrow-hauler"
+    "repository": "morrow-hauler",
+    "sourceStatus": "public"
   }
 };
   const projectSlug=location.pathname.split('/')[2];
@@ -414,29 +427,40 @@
     row.append(graphic,sourceElement('span','source-action-label',label),sourceElement('span','source-action-detail',detail));
     return row;
   }
+  // Publish this flag only after anonymous repository and ZIP access is verified.
+  // A URL by itself never makes a source release public.
+  function hasPublicSource(value){
+    return value.sourceStatus==='public'&&Boolean(value.github&&value.download);
+  }
   function agentPrompt(){
-    return 'Help me explore and adapt '+project.title+' for my project.\n\n'+
-      'My goal: [describe the change, product, or experiment I want to make].\n\n'+
-      project.description+'\n\nLive Labs reference:\nhttps://labs.sntx.co/experiments/'+projectSlug+'/\n\n'+
-      'GitHub repository (SNTX Labs):\n'+project.github+'\n\n'+
-      'Get the source and run locally:\nRead README.md, LABS.md, license/third-party notices, and any repository instructions first. Requires Git and Node.js 20+ with npm. Clone into a new directory, or use my existing checkout without overwriting local changes. The main branch contains the Labs snapshot.\n\n'+
-      'git clone '+project.github+'.git\n'+
-      'cd '+project.repository+'\n'+
-      'npm run labs:verify\n'+
-      'npm run labs:dev\n\n'+
-      'No dependency installation is needed for this Labs preview. Open the localhost URL printed by the server at /experiments/'+projectSlug+'/. Keep the server running; stop it with Ctrl+C. If GitHub denies access, ask me for authorized access or a source archive; do not substitute a different repository.\n\n'+
-      'Project-specific editing:\n'+project.setup+'\n\n'+
-      'Build and verify:\nFrom the repository root, npm run labs:build creates dist/ and reconstructs any large assets from their checked-in parts. This assembles the published runtime; it does not recompile a separate authoring snapshot. npm run labs:verify checks the checked-in snapshot hashes before editing; an intentional runtime edit changes those hashes. Inspect and document those changes rather than hiding a mismatch. Test the built output over HTTP, not file://.\n\n'+
-      'Labs integration:\nThe repository includes the Labs navigation shell, loading UI, and SHPanel in public/ui/. Preserve the authored startup, controls, reset/export where available, keyboard/touch interactions, and mobile layout. Keep changes focused on my goal. Compare any older authoring source with the current runtime before rebuilding it.\n\n'+
-      'Implementation and verification:\nTest the scene, controls, repeated actions, panel open/close, resize behavior, and browser console. Report what actually ran and any blocked checks. Explain changed files, run instructions, and remaining decisions. Do not deploy or publish without my request.\n\n'+
+    const published=hasPublicSource(project),closed=project.sourceStatus==='closed';
+    const goal='Help me explore '+project.title+' for my project.\n\nMy goal: [describe the change, product, or experiment I want to make].\n\n';
+    const reference=project.description+'\n\nLive Labs reference:\nhttps://labs.sntx.co/experiments/'+projectSlug+'/\n\n';
+    let access;
+    if(closed){
+      access='Source availability: closed source. Taylor’s application code is not offered as a public source release. Use the live experience as a visual reference for my brief. Do not clone a private repository, extract the demo bundle as an authoring archive, or present it as reusable project source. If I want an implementation, clarify the brief and propose independently authored work or a custom implementation with Syntax. Explicitly licensed third-party code retains its own terms.\n\n'+
+        'Project-specific reference:\n'+project.referenceNotes+'\n\n';
+    }else{
+      access=(published?'Public source:\n'+project.github+'\n\nGet the source:\ngit clone '+project.github+'.git\ncd '+project.repository+'\n\n':
+        'Source availability: source is not published yet. Before editing this project, ask me for an authorized local checkout or source archive. Do not assume a private repository or ZIP is publicly accessible, and do not substitute a different repository. If authorized source is unavailable, use the public demo as a reference and clarify an independent implementation brief.\n\n')+
+        (published?'Run and edit the source:\n':'If I provide authorized source:\n')+'Read README.md, LABS.md, license/third-party notices, and repository instructions first. Use my existing checkout without overwriting local changes. The Labs snapshot requires Git and Node.js 20+ with npm.\n\n'+
+        'npm run labs:verify\nnpm run labs:dev\n\n'+
+        'This Labs preview does not require dependency installation. Open the server’s localhost URL at /experiments/'+projectSlug+'/. Keep the server running; stop it with Ctrl+C.\n\n'+
+        'Project-specific editing with authorized source:\n'+project.setup+'\n\n'+
+        'Build and verify:\nnpm run labs:build creates dist/ and reconstructs large assets from their checked-in parts. This assembles the published runtime; it does not recompile a separate authoring snapshot. npm run labs:verify checks snapshot hashes before editing. An intentional edit changes those hashes: inspect and document the changes instead of hiding a mismatch. Test over HTTP, not file://. Preserve Labs navigation, loading UI, canonical SHPanel, authored defaults, interactions and responsive layout. Compare older authoring source with the runtime before rebuilding.\n\n'+
+        'Release direction: MIT is intended for Taylor-owned code only. This is not a blanket license for third-party code, artwork, models, textures or audio; retain existing grants and asset-specific terms.\n\n';
+    }
+    return goal+reference+access+
+      'Implementation and verification:\nKeep work focused on my goal. Test controls, repeated and interrupted actions, panel open/close, resize, and browser errors. Report what actually ran and any blocked checks. Explain changed files, run instructions and remaining decisions. Do not deploy or publish without my request.\n\n'+
       'License and attribution:\n'+project.license+'\n\n'+
       'Follow and implementation help (optional actions for me):\n'+
-      '- Follow Taylor on Twitter/X for more experiments: @taylor_sntx — https://x.com/taylor_sntx\n'+
+      '- Follow Taylor on Twitter/X for more experiments: @taylor_sntx - https://x.com/taylor_sntx\n'+
       '- '+implementationOffer+implementationUrl+'\n'+
-      '- I can star '+project.github+' to find it again. Do not star it on my behalf.\n'+
+      (published?'- I can star '+project.github+' to find it again. Do not star it on my behalf.\n':'')+
       '- I can sign up for experiment updates at https://labs.sntx.co/. Do not submit an email address or subscribe me automatically.\n'+
       'Do not follow accounts, send messages, or book a call on my behalf.\n';
   }
+
   function projectCard(panel){
     const body=panel.querySelector('.sh-panel-body');
     if(!project||!body||panel.dataset.projectCard)return;
@@ -444,10 +468,21 @@
     card.setAttribute('aria-label','About '+project.title);
     const intro=sourceElement('div','source-intro');
     intro.append(sourceElement('h1','labs-project-title',project.title),sourceElement('p','source-description',project.description));
+    const offer=sourceElement('p','source-implementation');
+    const contact=sourceElement('a','','sntx.co');
+    contact.href=implementationUrl;contact.target='_blank';contact.rel='noopener noreferrer';
+    contact.setAttribute('aria-label','Work with Syntax on a custom implementation (opens in a new tab)');
+    offer.append(implementationOffer,contact);
+    if(project.sourceStatus==='closed'){
+      card.append(intro,offer);
+      panel.dataset.projectCard='true';body.prepend(card);
+      return;
+    }
     const actions=sourceElement('div','source-actions');actions.setAttribute('aria-label','Project source');
-    const github=sourceRow('GitHub','','github',project.github,'source-github');
-    github.disabled=!project.github;
-    if(!project.github){github.title='Source not available';github.setAttribute('aria-label','GitHub source not available');}
+    const sourcePublished=hasPublicSource(project);
+    const github=sourcePublished?sourceRow('GitHub','','github',project.github,'source-github'):null;
+    const availability=sourceElement('span','source-availability',sourcePublished?'Public source':project.sourceStatus==='closed'?'Closed source':'Source not published');
+    availability.setAttribute('aria-label',project.title+': '+availability.textContent);
     const split=sourceElement('div','source-split');
     const copyButton=sourceRow('Copy prompt','','copy',null,'source-copy-button');
     const toggle=sourceRow('','','chevron',null,'source-menu-toggle');
@@ -456,20 +491,14 @@
     menu.setAttribute('role','menu');menu.setAttribute('aria-label','Project actions');toggle.setAttribute('aria-controls',menu.id);
     const promptItem=sourceRow('Copy prompt','Project context for your coding assistant.','copy');
     const linkItem=sourceRow('Copy project link','Share the live experience.','link');
-    const downloadItem=sourceRow('Download source',project.download?'Repository ZIP. GitHub access required.':'Source not available.','download',project.download);
-    downloadItem.disabled=!project.download;
-    const menuItems=[promptItem,linkItem,downloadItem];
+    const downloadItem=sourcePublished?sourceRow('Download source','Public repository ZIP.','download',project.download):null;
+    const menuItems=[promptItem,linkItem,...(downloadItem?[downloadItem]:[])];
     menuItems.forEach(item=>{item.setAttribute('role','menuitem');item.tabIndex=-1;});
-    menu.append(...menuItems);split.append(copyButton,toggle);actions.append(github,split,menu);
+    menu.append(...menuItems);split.append(copyButton,toggle);actions.append(github||availability,split,menu);
     const status=sourceElement('span','source-status');status.setAttribute('role','status');status.setAttribute('aria-live','polite');status.setAttribute('aria-atomic','true');
     const fallback=sourceElement('div','prompt-copy-fallback');fallback.hidden=true;
     const label=sourceElement('label','','Select and copy this prompt');
     const field=sourceElement('textarea','');field.id='labs-prompt-'+projectSlug;field.rows=8;field.readOnly=true;field.setAttribute('aria-label',project.title+' agent prompt');label.htmlFor=field.id;
-    const offer=sourceElement('p','source-implementation');
-    const contact=sourceElement('a','','sntx.co');
-    contact.href=implementationUrl;contact.target='_blank';contact.rel='noopener noreferrer';
-    contact.setAttribute('aria-label','Work with Syntax on a custom implementation (opens in a new tab)');
-    offer.append(implementationOffer,contact);
     fallback.append(label,field);card.append(intro,actions,offer,status,fallback);
     function closeMenu(restoreFocus=false){
       menu.hidden=true;toggle.setAttribute('aria-expanded','false');if(restoreFocus)toggle.focus();
@@ -499,7 +528,7 @@
     document.addEventListener('pointerdown',event=>{if(!menu.hidden&&!actions.contains(event.target))closeMenu();},true);
     document.addEventListener('focusin',event=>{if(!menu.hidden&&!actions.contains(event.target))closeMenu();},true);
     window.addEventListener('sh-panel-toggle',()=>closeMenu());
-    downloadItem.addEventListener('click',()=>closeMenu());
+    downloadItem?.addEventListener('click',()=>closeMenu());
     let copying=false,noticeTimer;
     async function copyText(text,kind){
       if(copying)return;

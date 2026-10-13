@@ -13,7 +13,7 @@
 .sh-panel .source-actions svg{width:14px;height:14px;flex:0 0 14px;fill:none}
 .sh-panel .source-split{display:flex;min-width:0;border:1px solid #ffffff20;border-radius:6px;background:#ffffff08;overflow:hidden}
 .sh-panel .source-copy-button{justify-content:center;min-width:116px;padding:8px 10px;color:rgba(255,255,255,.88)}
-.sh-panel .source-menu-toggle{justify-content:center;width:34px;flex:0 0 34px;border-left:1px solid #ffffff20;padding:8px}
+.sh-panel .source-menu-toggle{justify-content:center;width:36px;height:36px;min-width:36px;flex:0 0 36px;gap:0;border-left:1px solid #ffffff20;padding:0 11px}
 .sh-panel .source-menu-toggle svg{width:12px;height:12px;flex-basis:12px}
 .sh-panel .source-action-label{white-space:nowrap}
 .sh-panel .source-github .source-action-detail,.sh-panel .source-copy-button .source-action-detail,.sh-panel .source-menu-toggle .source-action-label,.sh-panel .source-menu-toggle .source-action-detail{display:none}
@@ -39,4 +39,6 @@
 .sh-panel[data-project-card] .panel-heading{display:none}
 .sh-panel [data-labs-advanced][hidden]{display:none!important}
 @media(prefers-reduced-motion:reduce){.sh-panel .source-actions :is(a,button){transition:none}}
-@media(pointer:coarse){.sh-panel .source-actions :is(a,button){min-height:44px}.sh-panel .source-menu-toggle{width:44px;flex-basis:44px}.sh-panel .source-copy-button{min-width:106px;padding-inline:8px}}
+@media(pointer:coarse){.sh-panel .source-actions :is(a,button){min-height:44px}.sh-panel .source-menu-toggle{width:44px;height:44px;min-width:44px;flex-basis:44px;padding-inline:15px}.sh-panel .source-copy-button{min-width:106px;padding-inline:8px}}
+
+.sh-panel .source-availability{min-width:0;color:rgba(255,255,255,.5);font:400 10px/1.5 var(--sh-font);overflow-wrap:anywhere}
